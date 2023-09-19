@@ -1,0 +1,96 @@
+# Colors (Tokyo Night - Storm)
+colors:
+  # Default colors
+  primary:
+    background: "0x24283b"
+    foreground: "0xc0caf5"
+
+  # Normal colors
+  normal:
+    black: "0x1d202f"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xa9b1d6"
+
+  # Bright colors
+  bright:
+    black: "0x414868"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xc0caf5"
+
+  indexed_colors:
+    - { index: 16, color: "0xff9e64" }
+    - { index: 17, color: "0xdb4b4b" }
+window:
+  opacity: 1
+  padding:
+    x: 0
+    y: 0
+  decorations: none
+  dimensions:
+    columns: 140
+    lines: 38
+env:
+  TERM: xterm-256color
+font:
+  normal:
+    family: Operator Mono
+    style: Light
+    #family: Fira Code
+    #style: Regular
+  bold:
+    family: Operator Mono
+    style: Book
+    #family: Fira Code
+    #style: Bold
+  italic:
+    family: Operator Mono
+    style: Light Italic
+    #family: Fira Code
+    #style: Italic
+  bold_italic:
+    family: Operator Mono
+    style: Book Italic
+    #family: Fira Code
+    #style: Bold Italic
+  # Point size
+  size: 18
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+  # Number of lines the viewport will move for every
+  # scrollback is enabled (hitstory > 0)
+  multiplier: 10
+# If `true`, bold text is drawn using the biright color
+draw_bold_text_with_bright_colors: true
+
+selection:
+  semantic_escape_chars: ",|`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+cursor:
+  # Cursor Style
+  style:
+    shape: Block
+    blinking: Always
+  unfocused_hollow: true
+#live_config_reload: true
+key_bindings:
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Q, mods: Control, action: Quit }
+  - { key: Return, mods: Alt, action: ToggleFullscreen }
