@@ -25,7 +25,7 @@ local plugins = {
 	-- "navarasu/onedark.nvim",
 	{
 		"folke/tokyonight.nvim",
-		priority = 1000,
+		-- priority = 1000,
 	},
 	-- "martinsione/darkplus.nvim",
 	-- "olimorris/onedarkpro.nvim",
@@ -123,7 +123,10 @@ local plugins = {
 
 	------- Better Visual indentation
 	-- "Yggdroot/indentLine", -- Better Visual Guide
-	"lukas-reineke/indent-blankline.nvim",
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		-- dependencies = { "nvim-treesitter" },
+	},
 
 	"machakann/vim-highlightedyank", -- Highlight your yank area
 
