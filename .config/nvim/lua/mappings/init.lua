@@ -13,7 +13,7 @@ map("n", "<C-l>", "<C-W>l", opts)
 ----------------------------
 -- Shortcut for opening nvim configuration file
 map("n", "<leader>ev", ":tabe /home/profkache/.config/nvim/init.lua<CR>", opts)
-map("n", "<leader><leader>", ":noh<CR>", opts)
+map("n", "<leader><space>", ":noh<CR>", opts)
 
 -- Saving and Quitting files
 map("n", "<leader>w", ":w<CR>", opts)
@@ -41,7 +41,7 @@ map("n", "<leader>t", ":tabe<CR>", opts)
 map("n", ";", ":", opts)
 
 -- Move back to normal mode from insert mode by typing ,e
-map("i", "<Leader>[", "<Esc>", opts)
+map("i", "<Leader>e", "<Esc>", opts)
 map("i", ",,b", "<Esc>I", opts) -- Move to the beginning of the line while insert mode and enter insert mode
 map("i", ",,e", "<Esc>A", opts) -- Move to the end of the line while insert mode and enter insert mode
 
