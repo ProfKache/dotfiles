@@ -1,6 +1,6 @@
 -- Set the leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 -- local ft = require("Comment.ft")
 
@@ -47,6 +47,7 @@ set.joinspaces = true
 
 set.updatetime = 700 -- Faster completion
 set.timeoutlen = 500 -- By default timeoutlen is 1000 ms
+set.ttimeoutlen = 0 -- sets the timeout for keycodes that start with a special key (like <Space>)
 
 ------------------------------------------
 -- TABS, INDENTATION, SPACES, CONFIGURATION
