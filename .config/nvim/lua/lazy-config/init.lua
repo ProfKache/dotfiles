@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 
 local plugins = {
 	"nvim-tree/nvim-web-devicons",
@@ -23,7 +23,10 @@ local plugins = {
 	--------------------------------------------------
 	-- COLOR SCHEMES
 	-- "navarasu/onedark.nvim",
-	"folke/tokyonight.nvim",
+	{
+		"folke/tokyonight.nvim",
+		priority = 1000,
+	},
 	-- "martinsione/darkplus.nvim",
 	-- "olimorris/onedarkpro.nvim",
 
