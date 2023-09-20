@@ -103,7 +103,7 @@ return require("packer").startup(function(use)
 
 	use("jiangmiao/auto-pairs")
 
-	use("echasnovski/mini.animate")
+	-- use("echasnovski/mini.animate")
 
 	------- Better Visual indentation
 	-- use("Yggdroot/indentLine") -- Better Visual Guide
