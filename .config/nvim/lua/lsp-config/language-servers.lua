@@ -12,6 +12,12 @@ local on_attach = function(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
+	if vim.lsp.inlay_hint then
+		vim.keymap.set("n", "<leader>4", function()
+			vim.lsp.inlay_hint(0, nil)
+		end, { desc = "Toggle Inlay Hints" })
+	end
+
 	-- Ignore format on save for 'C and C++' files
 	-- if client.name ~= "clangd" and client.name ~= "pyright" and client.name ~= "pylsp" then
 	-- 	-- require("lsp-format").on_attach(client)
@@ -111,7 +117,32 @@ require("lspconfig")["tsserver"].setup({
 	root_dir = function()
 		return vim.loop.cwd()
 	end,
+	javascript = {
+		inlayHints = {
+			includeInlayParameterNameHints = "all",
+			includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+			includeInlayFunctionParameterTypeHints = true,
+			includeInlayVariableTypeHints = true,
+			includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+			includeInlayPropertyDeclarationTypeHints = true,
+			includeInlayFunctionLikeReturnTypeHints = true,
+			includeInlayEnumMemberValueHints = true,
+		},
+	},
+	typescript = {
+		inlayHints = {
+			includeInlayParameterNameHints = "all",
+			includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+			includeInlayFunctionParameterTypeHints = true,
+			includeInlayVariableTypeHints = true,
+			includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+			includeInlayPropertyDeclarationTypeHints = true,
+			includeInlayFunctionLikeReturnTypeHints = true,
+			includeInlayEnumMemberValueHints = true,
+		},
+	},
 })
+
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
@@ -130,6 +161,9 @@ require("lspconfig")["lua_ls"].setup({
 			diagnostics = {
 				globals = { "vim" },
 			},
+			workspace = { checkThirdParty = false },
+			telemetry = { enable = false },
+			hint = { enable = true },
 		},
 	},
 })

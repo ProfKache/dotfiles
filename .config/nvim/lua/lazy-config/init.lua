@@ -199,4 +199,10 @@ local plugins = {
 	"onsails/lspkind.nvim", -- add pictograms on built-in lsp
 }
 
-require("lazy").setup(plugins, {})
+require("lazy").setup(plugins, {
+	spec = {
+		{ import = "lazyvim.plugins.extras.lang.typescript" },
+		{ import = "lazyvim.plugins.extras.lang.json" },
+		{ import = "lazyvim.plugins.extras.ui.mini-animate" },
+	},
+})
