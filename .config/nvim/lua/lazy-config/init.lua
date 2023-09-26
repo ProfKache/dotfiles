@@ -56,6 +56,7 @@ local plugins = {
 	},
 	--------------------------------------------------
 
+	"mfussenegger/nvim-dap",
 	"mfussenegger/nvim-jdtls",
 
 	-- for searching through icons
@@ -98,8 +99,6 @@ local plugins = {
 
 	-- "derekwyatt/vim-scala",
 	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
-
-	"mfussenegger/nvim-dap",
 
 	{
 		"iamcco/markdown-preview.nvim",
@@ -189,6 +188,8 @@ local plugins = {
 		build = "yarn install --frozen-lockfile && yarn compile",
 	},
 
+	-- "github/copilot.vim",
+
 	-- Code buildners
 	-- { "michaelb/snipbuild", build = "bash ./install.sh" },
 
@@ -199,10 +200,4 @@ local plugins = {
 	"onsails/lspkind.nvim", -- add pictograms on built-in lsp
 }
 
-require("lazy").setup(plugins, {
-	spec = {
-		{ import = "lazyvim.plugins.extras.lang.typescript" },
-		{ import = "lazyvim.plugins.extras.lang.json" },
-		{ import = "lazyvim.plugins.extras.ui.mini-animate" },
-	},
-})
+require("lazy").setup(plugins, {})
