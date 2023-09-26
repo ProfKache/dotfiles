@@ -90,7 +90,7 @@ local plugins = {
 
 	-- "glepnir/dashboard-nvim", -- Neovim Dashboard.
 
-	"dense-analysis/ale", -- Linter for betty requirement
+	-- "dense-analysis/ale", -- Linter for betty requirement
 	-- "JuanDAC/betty-ale-vim", -- Betty linter by holberton School
 
 	-- EcmaScript and JSX

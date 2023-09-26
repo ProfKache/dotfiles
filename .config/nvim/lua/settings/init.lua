@@ -121,6 +121,13 @@ vim.cmd([[
  let g:user_emmet_leader_key=','
 ]])
 
+-- vim.cmd([[
+-- let g:ale_fixers = {
+-- \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+-- \   'javascript': ['eslint_d'],
+-- \}
+-- ]])
+
 --[[
 
  let g:user_emmet_settings = {
