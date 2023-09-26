@@ -31,7 +31,7 @@ local config = {
 	-- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
 	cmd = {
 		-- 💀
-		"java", -- or '/path/to/java17_or_newer/bin/java'
+		home .. ".asdf/installs/java/openjdk-17.0.2/bin/java", -- or '/path/to/java17_or_newer/bin/java'
 		-- depends on if `java` is in your $PATH env variable and if it points to the right version.
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
@@ -66,7 +66,7 @@ local config = {
 	root_dir = root_dir,
 
 	settings = {
-		-- ["java.format.settings.url"] = home .. "/.config/nvim/formatters/java-google-formatter.xml",
+		["java.format.settings.url"] = home .. "/.config/nvim/formatters/eclipse-java-google-style.xml",
 		["java.format.settings.profile"] = "GoogleStyle",
 		java = {
 			-- jdt = {
@@ -98,12 +98,45 @@ local config = {
 		},
 		contentProvider = { preferred = "fernflower" },
 		-- extendedClientCapabilities = extendedClientCapabilities,
-		sources = { organizeImports = { starThreshold = 9999, staticStarThreshold = 9999 } },
+		sources = {
+			organizeImports = {
+				starThreshold = 9999,
+				staticStarThreshold = 9999,
+			},
+		},
 		codeGeneration = {
 			toString = {
 				template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
 			},
 			useBlocks = true,
+		},
+		configuration = {
+			runtime = {
+				{
+					name = "JavaSE-17",
+					path = home .. "/.asdf/installs/java/openjdk-17.0.2",
+				},
+				{
+					name = "JavaSE-14",
+					path = home .. "/.asdf/installs/java/openjdk-17.0.2",
+				},
+				{
+					name = "JavaSE-13",
+					path = home .. "/.asdf/installs/java/openjdk-13.0.2",
+				},
+				{
+					name = "JavaSE-11",
+					path = home .. "/.asdf/installs/java/openjdk-11.0.2",
+				},
+				{
+					name = "JavaSE-10",
+					path = home .. "/.asdf/installs/java/openjdk-10.0.2",
+				},
+				{
+					name = "JavaSE-1.8",
+					path = home .. "/.asdf/installs/java/adoptopenjdk-8.0.382+5",
+				},
+			},
 		},
 		flags = {
 			allow_incremental_sync = true,
