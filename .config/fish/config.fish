@@ -60,8 +60,8 @@ alias nb="npm build"
 alias nrb="npm run build"
 
 # some tmux shortcuts
-alias tl="tmux list-sessions"
-alias ta="tmux attach-session"
+alias tl="tmux ls"
+alias ta="tmux a -t"
 alias tn="tmux new -s"
 alias td="tmux kill-session -t"
 
