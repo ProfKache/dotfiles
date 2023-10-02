@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ","
 
 local plugins = {
+	"christoomey/vim-tmux-navigator",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
 	"williamboman/mason.nvim",
@@ -159,8 +160,6 @@ local plugins = {
 		-- 	require("toggleterm").setup()
 		-- end,
 	},
-
-	"christoomey/vim-tmux-navigator",
 
 	"mg979/vim-visual-multi", -- multi-cursor
 
