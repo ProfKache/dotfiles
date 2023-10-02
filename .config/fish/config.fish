@@ -63,7 +63,8 @@ alias nrb="npm run build"
 alias tl="tmux ls"
 alias ta="tmux a -t"
 alias tn="tmux new -s"
-alias td="tmux kill-session -t"
+alias tk="tmux kill-session -t"
+alias td="tmux detach"
 
 # some php shortcuts
 # alias composer="/usr/local/bin/composer"
