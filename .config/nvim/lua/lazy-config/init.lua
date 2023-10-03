@@ -132,15 +132,9 @@ local plugins = {
 
 	"tpope/vim-fugitive", -- Git Integration
 	-- "tpope/vim-surround"), -- Surrounding text plugin
-	{
-		"kylechui/nvim-surround",
-		-- version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	}, -- Surrounding text plugin
+
+	-- Surrounding text plugin
+	"kylechui/nvim-surround",
 
 	-- Split/Join code blocks like arrays, dicts, functions etc.
 	{
