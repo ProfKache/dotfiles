@@ -108,8 +108,31 @@ local plugins = {
 		end,
 	},
 
+	-- Git
 	"lewis6991/gitsigns.nvim", -- Show lines upon git changes
 	"f-person/git-blame.nvim",
+	"tpope/vim-fugitive", -- Git Integration
+	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
+
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 
 	-- Django plugins
 	"tweekmonster/django-plus.vim", -- Django extension for vim/nvim
@@ -130,7 +153,6 @@ local plugins = {
 
 	"machakann/vim-highlightedyank", -- Highlight your yank area
 
-	"tpope/vim-fugitive", -- Git Integration
 	-- "tpope/vim-surround"), -- Surrounding text plugin
 
 	-- Surrounding text plugin
@@ -188,10 +210,20 @@ local plugins = {
 	-- Code buildners
 	-- { "michaelb/snipbuild", build = "bash ./install.sh" },
 
-	"hrsh7th/nvim-cmp", -- Autocompletion plugin
+	-- Autocompletion
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+	"hrsh7th/cmp-nvim-lua", -- LSP source for nvim-cmp
 	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
-	"L3MON4D3/LuaSnip", -- Snippets plugin use 'neovim/nvim-lspconfig'
+
+	-- Snippets
+	-- "L3MON4D3/LuaSnip", -- Snippets plugin use 'neovim/nvim-lspconfig'
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = { "rafamadriz/friendly-snippets" },
+	},
+
 	"onsails/lspkind.nvim", -- add pictograms on built-in lsp
 }
 
