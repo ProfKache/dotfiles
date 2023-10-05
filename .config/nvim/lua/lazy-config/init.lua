@@ -17,6 +17,12 @@ local plugins = {
 	"christoomey/vim-tmux-navigator",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
+
+	{
+		"ThePrimeagen/harpoon",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
+
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig", -- Configurations for Nvim LSP
@@ -148,7 +154,9 @@ local plugins = {
 	-- "Yggdroot/indentLine", -- Better Visual Guide
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		-- dependencies = { "nvim-treesitter" },
+		main = "ibl",
+		opts = {},
+		dependencies = { "nvim-treesitter" },
 	},
 
 	"machakann/vim-highlightedyank", -- Highlight your yank area
@@ -156,7 +164,10 @@ local plugins = {
 	-- "tpope/vim-surround"), -- Surrounding text plugin
 
 	-- Surrounding text plugin
-	"kylechui/nvim-surround",
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+	},
 
 	-- Split/Join code blocks like arrays, dicts, functions etc.
 	{
