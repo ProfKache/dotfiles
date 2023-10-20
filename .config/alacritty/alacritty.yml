@@ -43,22 +43,22 @@ env:
   TERM: xterm-256color
 font:
   normal:
-    family: Operator Mono
+    family: Operator Mono Lig
     style: Light
     #family: Fira Code
     #style: Regular
   bold:
-    family: Operator Mono
+    family: Operator Mono Lig
     style: Book
     #family: Fira Code
     #style: Bold
   italic:
-    family: Operator Mono
+    family: Operator Mono Lig
     style: Light Italic
     #family: Fira Code
     #style: Italic
   bold_italic:
-    family: Operator Mono
+    family: Operator Mono Lig
     style: Book Italic
     #family: Fira Code
     #style: Bold Italic
