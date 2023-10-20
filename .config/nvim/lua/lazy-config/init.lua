@@ -14,14 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ","
 
 local plugins = {
-	"christoomey/vim-tmux-navigator",
+	-- "christoomey/vim-tmux-navigator",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
 
-	{
-		"ThePrimeagen/harpoon",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-	},
+	-- {
+	-- 	"ThePrimeagen/harpoon",
+	-- 	dependencies = { { "nvim-lua/plenary.nvim" } },
+	-- },
 
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
@@ -29,7 +29,7 @@ local plugins = {
 
 	--------------------------------------------------
 	-- COLOR SCHEMES
-	-- "navarasu/onedark.nvim",
+	"navarasu/onedark.nvim",
 	{
 		"folke/tokyonight.nvim",
 		-- priority = 1000,
@@ -47,10 +47,10 @@ local plugins = {
 	--- TREESITTERS
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"nvim-treesitter/nvim-treesitter-refactor",
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
+	-- },
 	"interdependence/tree-sitter-htmldjango",
 	--------------------------------------------------
 
@@ -126,23 +126,23 @@ local plugins = {
 		},
 	},
 
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-	},
+	-- {
+	-- 	"folke/which-key.nvim",
+	-- 	event = "VeryLazy",
+	-- 	init = function()
+	-- 		vim.o.timeout = true
+	-- 		vim.o.timeoutlen = 300
+	-- 	end,
+	-- 	opts = {
+	-- 		-- your configuration comes here
+	-- 		-- or leave it empty to use the default settings
+	-- 		-- refer to the configuration section below
+	-- 	},
+	-- },
 
 	-- Django plugins
 	"tweekmonster/django-plus.vim", -- Django extension for vim/nvim
-	-- "/mmontone/djula", -- Template engine for django
+	"mmontone/djula", -- Template engine for django
 
 	-- "integralist/vim-mypy", -- python static typing plugin
 
@@ -161,13 +161,11 @@ local plugins = {
 
 	"machakann/vim-highlightedyank", -- Highlight your yank area
 
-	-- "tpope/vim-surround"), -- Surrounding text plugin
+	"tpope/vim-surround", -- Surrounding text plugin
 
 	-- Surrounding text plugin
-	{
-		"kylechui/nvim-surround",
-		event = "VeryLazy",
-	},
+
+	-- "kylechui/nvim-surround",
 
 	-- Split/Join code blocks like arrays, dicts, functions etc.
 	{

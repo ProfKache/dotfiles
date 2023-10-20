@@ -5,7 +5,7 @@ require("tokyonight").setup({
 		comments = { italic = true },
 		keywords = { italic = true },
 		functions = {},
-		-- variables = { italic = true },
+		variables = {},
 		string = {},
 	},
 })
