@@ -1,4 +1,4 @@
--- local map = vim.api.nvim_set_keymap
+local langmap = vim.api.nvim_set_keymap
 local map = vim.keymap.set
 local opts = { noremap = true }
 
@@ -42,8 +42,8 @@ map("n", ";", ":", opts)
 
 -- Move back to normal mode from insert mode by typing ,e
 map("i", "<Leader>e", "<Esc>", opts)
-map("i", ",,b", "<Esc>I", opts) -- Move to the beginning of the line while insert mode and enter insert mode
-map("i", ",,e", "<Esc>A", opts) -- Move to the end of the line while insert mode and enter insert mode
+-- map("i", ",,b", "<Esc>I", opts) -- Move to the beginning of the line while insert mode and enter insert mode
+-- map("i", ",,e", "<Esc>A", opts) -- Move to the end of the line while insert mode and enter insert mode
 
 -- Disable Arrow s --
 map("n", "<Left>", "<NOP>", opts)
@@ -134,6 +134,18 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 -- with emoji
 map("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
 map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+
+-- wrap selection in JSON.stringify(*)
+map("v", ",js", [[ cJSON.stringify(<c-r>")<esc> ]], { noremap = false })
+
+-- wrap selection in JSON.parse(*)
+map("v", ",jp", [[ cJSON.parse(<c-r>")<esc> ]], { noremap = false })
+
+-- wrap selection in console.log
+map("v", ",cl", [[ cconsole.log(<c-r>")<esc> ]], { noremap = false })
+
+-- wrap selection in print
+map("v", ",pr", [[ cprint(<c-r>")<esc> ]], { noremap = false })
 
 ----------------------------
 -- DATABASE MAPPINGS.

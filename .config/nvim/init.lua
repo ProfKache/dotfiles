@@ -1,7 +1,11 @@
 require("lazy-config")
 require("settings")
 require("mappings")
+
+-- Color Schemess
+-- require("colors.onedark")
 require("colors.tokyonight")
+
 require("nvim-tree-config")
 require("mason-config")
 require("lsp-config.language-servers")
