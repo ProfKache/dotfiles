@@ -192,11 +192,11 @@ require("lspconfig")["sqlls"].setup({
 	flags = lsp_flags,
 	capabilities = capabilities,
 })
--- require("lspconfig")["sqls"].setup({
--- 	-- on_attach = on_attach,
--- 	flags = lsp_flags,
--- 	capabilities = capabilities,
--- })
+require("lspconfig")["kotlin_language_server"].setup({
+	-- on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
 require("lspconfig")["phpactor"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
