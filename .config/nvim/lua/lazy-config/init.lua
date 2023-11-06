@@ -18,10 +18,10 @@ local plugins = {
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
 
-	-- {
-	-- 	"ThePrimeagen/harpoon",
-	-- 	dependencies = { { "nvim-lua/plenary.nvim" } },
-	-- },
+	{
+		"ThePrimeagen/harpoon",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
 
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
