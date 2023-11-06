@@ -153,6 +153,10 @@ map("v", ",cl", [[ cconsole.log(<c-r>")<esc> ]], { noremap = false })
 
 -- wrap selection in print
 map("v", ",pr", [[ cprint(<c-r>")<esc> ]], { noremap = false })
+map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+
+-- Simple mapping for setting filetype to jinja.html
+map("n", "<Leader>3", ":set filetype=jinja.html", opts) --> Yank the selected icon into register
 
 ----------------------------
 -- DATABASE MAPPINGS.
