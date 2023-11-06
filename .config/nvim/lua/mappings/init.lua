@@ -130,6 +130,13 @@ map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 map("n", "<leader>fc", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
+map("n", "<leader>fm", ":Telescope harpoon marks<CR>")
+
+----------------------------
+-- HARPOON MAPPINGS.
+----------------------------
+map("n", "<leader>m", ":lua require('harpoon.mark').add_file()<CR>", opts)
+map("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 
 -- with emoji
 map("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
