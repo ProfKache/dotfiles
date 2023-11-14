@@ -43,7 +43,7 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "black",
-					args = { "-" },
+					args = { "--line-length 79", "-" },
 					stdin = true,
 				}
 			end,
