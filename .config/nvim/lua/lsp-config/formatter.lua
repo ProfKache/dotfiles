@@ -147,7 +147,7 @@ require("formatter").setup({
 		htmldjango = {
 			function()
 				return {
-					exe = "prettierd",
+					exe = "djlint",
 					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
 					stdin = true,
 				}
