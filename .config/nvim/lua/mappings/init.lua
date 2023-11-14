@@ -156,7 +156,8 @@ map("v", ",pr", [[ cprint(<c-r>")<esc> ]], { noremap = false })
 map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
 
 -- Simple mapping for setting filetype to jinja.html
-map("n", "<Leader>3", ":set filetype=jinja.html", opts) --> Yank the selected icon into register
+map("n", "<Leader>3", ":set filetype=jinja.html<CR>", opts) --> Yank the selected icon into register
+map("n", "<Leader>4", ":set filetype=htmldjango<CR>", opts) --> Yank the selected icon into register
 
 ----------------------------
 -- DATABASE MAPPINGS.
