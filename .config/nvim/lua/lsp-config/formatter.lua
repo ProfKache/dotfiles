@@ -148,7 +148,7 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "djlint",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+					args = { "--reformat", "--indent 2", "-" },
 					stdin = true,
 				}
 			end,
