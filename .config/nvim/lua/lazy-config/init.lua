@@ -148,6 +148,8 @@ local plugins = {
 
 	"jiangmiao/auto-pairs",
 
+	"xiyaowong/transparent.nvim",
+
 	-- "echasnovski/mini.animate",
 
 	------- Better Visual indentation
