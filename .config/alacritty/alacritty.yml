@@ -31,7 +31,7 @@ colors:
     - { index: 16, color: "0xff9e64" }
     - { index: 17, color: "0xdb4b4b" }
 window:
-  opacity: 1
+  opacity: .9
   padding:
     x: 0
     y: 0
