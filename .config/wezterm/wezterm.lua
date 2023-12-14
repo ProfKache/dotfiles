@@ -38,7 +38,7 @@ config.keys = {
 }
 
 -- config.window_background_image = "/home/profkache/Pictures/term_wallpapers/pxfuel.jpg"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 config.window_decorations = "RESIZE"
 config.window_padding = {
 	left = 0,
