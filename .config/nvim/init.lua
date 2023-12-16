@@ -26,5 +26,3 @@ require("gitsigns-config")
 require("numToStr-comment-config")
 require("lsp-config.nvim-metals-config")
 -- require("dadbod-config") -- Database
-
-vim.cmd("set cmdheight=1")
