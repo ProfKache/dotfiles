@@ -20,7 +20,6 @@ set.cursorline = true -- Highlight the current line
 set.laststatus = 2 -- Always display the filename at the bottom
 set.colorcolumn = "80"
 set.autoindent = true
-set.cmdheight = 1
 
 -- Setup colorscheme
 -- vim.cmd([[ colorscheme darkplus ]])
