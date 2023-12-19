@@ -128,7 +128,11 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "prettierd",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+					args = {
+						"--stdin-filepath",
+						"--end-without-tag",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+					},
 					stdin = true,
 				}
 			end,
@@ -138,7 +142,7 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "prettierd",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+					args = { vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
 					stdin = true,
 				}
 			end,
@@ -165,6 +169,16 @@ require("formatter").setup({
 		},
 
 		yaml = {
+			function()
+				return {
+					exe = "prettierd",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+					stdin = true,
+				}
+			end,
+		},
+
+		yml = {
 			function()
 				return {
 					exe = "prettierd",

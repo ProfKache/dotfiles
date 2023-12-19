@@ -226,14 +226,22 @@ local plugins = {
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
 	"hrsh7th/cmp-nvim-lua", -- LSP source for nvim-cmp
-	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
+	-- "saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
 
 	-- Snippets
-	-- "L3MON4D3/LuaSnip", -- Snippets plugin use 'neovim/nvim-lspconfig'
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = { "rafamadriz/friendly-snippets" },
-	},
+	-- {
+	-- 	"L3MON4D3/LuaSnip",
+	-- 	-- follow latest release.
+	-- 	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- 	-- install jsregexp (optional!).
+	-- 	build = "make install_jsregexp",
+	-- },
+	"L3MON4D3/LuaSnip", -- Snippets plugin use 'neovim/nvim-lspconfig'
+	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
+	--{
+	--	"L3MON4D3/LuaSnip",
+	--	dependencies = { "rafamadriz/friendly-snippets" },
+	--},
 
 	"onsails/lspkind.nvim", -- add pictograms on built-in lsp
 }
