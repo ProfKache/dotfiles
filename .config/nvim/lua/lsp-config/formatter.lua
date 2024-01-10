@@ -59,6 +59,15 @@ require("formatter").setup({
 			end,
 		},
 
+		rust = {
+			function()
+				return {
+					exe = "rustfmt",
+					stdin = true,
+				}
+			end,
+		},
+
 		json = {
 			function()
 				return {
