@@ -149,7 +149,11 @@ require("lspconfig")["rust_analyzer"].setup({
 	capabilities = capabilities,
 	-- Server-specific settings...
 	settings = {
-		["rust-analyzer"] = {},
+		["rust-analyzer"] = {
+			diagnostics = {
+				enable = true,
+			},
+		},
 	},
 })
 require("lspconfig")["lua_ls"].setup({

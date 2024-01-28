@@ -33,7 +33,7 @@ alias dp="django-admin startproject"
 alias da="python manage.py startapp"
 alias csu="python manage.py createsuperuser"
 alias shl="python manage.py shell"
-alias mt="python manage.py test"
+alias dt="python manage.py test"
 
 # git related aliases
 alias ga="git add"
@@ -76,8 +76,13 @@ alias mysql="/usr/bin/mysql -u root -p"
 # OpenHIM console
 alias openhim-console="cd /var/www/html/openhim-console-1.15.0 && ns"
 
+# Airbyte Console
+alias airbyte="bash ~/sources/airbyte/run-ab-platform.sh"
+
 # Reduce typing for PDM command
 alias pdr="pdm run"
+alias pdi="pdm init"
+alias pdp="pdr django-admin startproject config ."
 
 
 # Setting GO Path
@@ -124,9 +129,15 @@ function hdd
     df -h /home | grep /dev/ | awk '{print $4}'
 end
 
-# function csu
-#   echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$argv', '$argv@example.com', 'h@ndl3')" | python manage.py shell
-#end
+# Create super with virtual environment
+function csuf
+  echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$argv[1]', '$argv[1]@example.com', 'h@ndl3')" | python manage.py shell
+end
+
+# Create super user with python pdm
+function csup
+  echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$argv[1]', '$argv[1]@example.com', 'h@ndl3')" | pdm run python manage.py shell
+end
 
 # Setting up bobthefish theme settings
 set -g theme_display_git_default_branch yes
@@ -148,6 +159,8 @@ abbr q exit
 abbr vim nvim
 abbr h 'cd ~/'
 abbr wh 'cd ~/workspace'
+abbr wdj 'cd ~/workspace/Python/Django'
+abbr wp 'cd ~/workspace/Python'
 abbr c clear
 abbr - 'cd -'
 abbr .. 'cd ../'
@@ -171,6 +184,8 @@ abbr py8 "python3.8"
 abbr py9 "python3.9"
 abbr py10 "python3.10"
 abbr py11 "python3.11"
+abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
+abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
