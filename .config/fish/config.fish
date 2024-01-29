@@ -101,6 +101,9 @@ set PATH ~/.fly/bin $PATH
 
 set PATH ~/.local/share/coursier/bin $PATH
 
+# set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+
 # set path for scala programming language and others
 set PATH ~/.sdkman/candidates/*/current/bin/ $PATH
 
