@@ -202,11 +202,11 @@ require("lspconfig")["kotlin_language_server"].setup({
 	flags = lsp_flags,
 	capabilities = capabilities,
 })
-require("lspconfig")["phpactor"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
+-- require("lspconfig")["phpactor"].setup({
+-- 	on_attach = on_attach,
+-- 	flags = lsp_flags,
+-- 	capabilities = capabilities,
+-- })
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
