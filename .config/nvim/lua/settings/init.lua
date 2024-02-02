@@ -20,6 +20,7 @@ set.cursorline = true -- Highlight the current line
 set.laststatus = 2 -- Always display the filename at the bottom
 set.colorcolumn = "80"
 set.autoindent = true
+set.signcolumn = "yes"
 
 -- Setup colorscheme
 -- vim.cmd([[ colorscheme darkplus ]])
@@ -39,7 +40,7 @@ set.scrolloff = 7
 set.hidden = true
 set.showcmd = true
 set.showmode = false -- We don't want to see things like -- INSERT -- anymore
-set.clipboard = "unnamedplus"
+set.clipboard = "unnamed,unnamedplus" -- Enable access to system clipboard
 
 set.cmdheight = 2 -- Give more space for  displaying messages.
 
@@ -48,6 +49,7 @@ set.joinspaces = true
 set.updatetime = 700 -- Faster completion
 set.timeoutlen = 500 -- By default timeoutlen is 1000 ms
 set.ttimeoutlen = 0 -- sets the timeout for keycodes that start with a special key (like <Space>)
+set.completeopt = { "menuone", "noselect" } -- Set completion experience
 
 ------------------------------------------
 -- TABS, INDENTATION, SPACES, CONFIGURATION
