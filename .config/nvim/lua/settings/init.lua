@@ -28,7 +28,7 @@ set.signcolumn = "yes"
 -- vim.cmd([[ highlight Identifier gui=italic ]])
 -- vim.cmd([[ highlight Identifier gui=italic guifg=#D4D4D4 ]])
 
--- Setup the buffer line
+-- enable 256 colors
 set.termguicolors = true
 -- Folding
 -- set.foldmethod = "expr"
