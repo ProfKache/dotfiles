@@ -21,7 +21,7 @@ end
 config.color_scheme = "Tokyo Night Storm"
 config.line_height = 1.25
 config.font = wezterm.font_with_fallback({
-	{ family = "Operator Mono Lig", scale = 1.79, weight = "Light" },
+	{ family = "Operator Mono Lig", scale = 1.74, weight = "Light" },
 	-- { family = "FuraCode Nerd Font", scale = 1.4, weight = "Light" },
 })
 
