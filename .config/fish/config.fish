@@ -59,12 +59,6 @@ alias nrs="npm run start"
 alias nb="npm build"
 alias nrb="npm run build"
 
-# some tmux shortcuts
-alias tl="tmux ls"
-alias ta="tmux a -t"
-alias tn="tmux new -s"
-alias tk="tmux kill-session -t"
-alias td="tmux detach"
 
 # some php shortcuts
 # alias composer="/usr/local/bin/composer"
@@ -181,17 +175,27 @@ abbr grep 'grep --color=auto'
 abbr egrep 'egrep --color=auto'
 abbr fgrep 'fgrep --color=auto'
 abbr .conf 'cd ~/.config'
-abbr t tmux
 abbr fconf 'nvim ~/.config/fish/config.fish'
 abbr metabase 'java -jar /opt/Metabase/metabase.jar'
+
+# some tmux shortcuts
+abbr t tmux
+abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
+abbr tl 'tmux ls'
+abbr ta 'tmux attach -t'
 abbr tk 'tmux kill-session -t'
+abbr td 'tmux detach'
+
+# C code execution
 abbr gcc 'gcc -Wall -pedantic -Wextra'
+
 abbr poetlocal 'poetry config --local virtualenvs.in-project true'
 
 abbr py8 "python3.8"
 abbr py9 "python3.9"
 abbr py10 "python3.10"
 abbr py11 "python3.11"
+abbr py12 "python3.12"
 abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
 abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
 
