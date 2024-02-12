@@ -37,8 +37,8 @@ window:
     y: 0
   decorations: none
   dimensions:
-    columns: 140
-    lines: 38
+    columns: 120
+    lines: 32
 env:
   TERM: xterm-256color
 font:
