@@ -64,7 +64,8 @@ alias nrb="npm run build"
 # alias composer="/usr/local/bin/composer"
 # alias php="/opt/lampp/bin/php"
 # alias mysql="/opt/lampp/bin/mysql -u root -p"
-alias mysql="/usr/bin/mysql -u root -p"
+# alias mysql="/usr/bin/mysql -u root -p"  # for linux
+alias mysql="/usr/local/mysql/bin/mysql -u root -p"   # for mac os
 
 
 # OpenHIM console
@@ -211,3 +212,6 @@ source /Users/profkache/.phpbrew/phpbrew.fish
 # Adding path for maven
 set --export MVN_HOME "$HOME/sources/apache-maven-3.9.6"
 set --export PATH $MVN_HOME/bin $PATH
+
+set --export JAVA_HOME "$HOME/.asdf/installs/java/openjdk-17.0.2"
+set --export PATH $JAVA_HOME/bin $PATH
