@@ -66,6 +66,7 @@ alias nrb="npm run build"
 # alias mysql="/opt/lampp/bin/mysql -u root -p"
 # alias mysql="/usr/bin/mysql -u root -p"  # for linux
 alias mysql="/usr/local/mysql/bin/mysql -u root -p"   # for mac os
+alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
 
 
 # OpenHIM console
