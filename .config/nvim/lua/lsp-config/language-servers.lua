@@ -66,11 +66,11 @@ require("lspconfig")["pyright"].setup({
 	},
 })
 
-require("lspconfig")["pylsp"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
+-- require("lspconfig")["pylsp"].setup({
+-- 	on_attach = on_attach,
+-- 	flags = lsp_flags,
+-- 	capabilities = capabilities,
+-- })
 
 require("lspconfig")["gopls"].setup({
 	on_attach = on_attach,
@@ -103,11 +103,11 @@ require("lspconfig")["clangd"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["custom_elements_ls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
+-- require("lspconfig")["custom_elements_ls"].setup({
+-- 	on_attach = on_attach,
+-- 	flags = lsp_flags,
+-- 	capabilities = capabilities,
+-- })
 
 require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
@@ -171,11 +171,31 @@ require("lspconfig")["lua_ls"].setup({
 		},
 	},
 })
-require("lspconfig")["jdtls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
+
+-- require("lspconfig")["jdtls"].setup({
+-- 	on_attach = on_attach,
+-- 	flags = lsp_flags,
+-- 	capabilities = capabilities,
+-- })
+
+-- local home = os.getenv("HOME")
+--
+-- require("lspconfig")["jdtls"].setup({
+-- 	settings = {
+-- 		java = {
+-- 			configuration = {
+-- 				runtimes = {
+-- 					{
+-- 						name = "JavaSE-17",
+-- 						path = home .. "/.asdf/installs/java/openjdk-17.0.2",
+-- 						default = true,
+-- 					},
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- })
+
 -- require("lspconfig")["golangci_lint_ls"].setup({
 --   on_attach = on_attach,
 --   flags = lsp_flags,

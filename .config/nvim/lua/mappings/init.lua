@@ -159,6 +159,9 @@ map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the sele
 map("n", "<Leader>3", ":set filetype=jinja.html<CR>", opts) --> Yank the selected icon into register
 map("n", "<leader>5", ":set filetype=htmldjango<CR>", opts) --> Yank the selected icon into register
 
+-- Dismiss Noice Message
+map("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
+
 ----------------------------
 -- DATABASE MAPPINGS.
 ----------------------------

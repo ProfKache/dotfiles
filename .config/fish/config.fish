@@ -66,6 +66,7 @@ alias nrb="npm run build"
 # alias mysql="/opt/lampp/bin/mysql -u root -p"
 # alias mysql="/usr/bin/mysql -u root -p"  # for linux
 alias mysql="/usr/local/mysql/bin/mysql -u root -p"   # for mac os
+alias mycli="mycli mysql://root@localhost:3306/mysql"
 alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
 
 
@@ -99,6 +100,11 @@ set PATH ~/.phpenv/bin $PATH
 
 set PATH ~/Library/Python/3.12/bin $PATH
 
+# For mac os x only openvpn installation
+set PATH /usr/local/opt/openvpn/sbin $PATH
+
+# Set openssl new path
+set PATH /usr/local/openssl-3.0.7/bin $PATH
 
 set PATH ~/.local/share/coursier/bin $PATH
 
@@ -120,13 +126,19 @@ set PATH ~/.sdkman/candidates/*/current/bin/ $PATH
 set fish_greeting # Turns off the intro fish message when pulling up fish shell
 set -gx EDITOR nvim # Sets $EDITOR to nvim (neovim)
 
-## Android
-set --export ANDROID_HOME $HOME/Android/Sdk
+## Android for linux
+# set --export ANDROID_HOME $HOME/Android/Sdk
+# set -gx PATH $ANDROID_HOME/emulator $PATH
+# set -gx PATH $ANDROID_HOME/tools $PATH
+# set -gx PATH $ANDROID_HOME/tools/bin $PATH
+# set -gx PATH $ANDROID_HOME/platform-tools $PATH
+
+## Android for mac os x
+set --export ANDROID_HOME $HOME/Library/Android/sdk
 set -gx PATH $ANDROID_HOME/emulator $PATH
 set -gx PATH $ANDROID_HOME/tools $PATH
 set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH $ANDROID_HOME/platform-tools $PATH
-
 
 # Function to see available storage in home folder
 function hdd
@@ -200,6 +212,8 @@ abbr py11 "python3.11"
 abbr py12 "python3.12"
 abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
 abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
+# abbr tumevpn "sudo openvpn --config /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
+abbr tumevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -214,5 +228,5 @@ source /Users/profkache/.phpbrew/phpbrew.fish
 set --export MVN_HOME "$HOME/sources/apache-maven-3.9.6"
 set --export PATH $MVN_HOME/bin $PATH
 
-set --export JAVA_HOME "$HOME/.asdf/installs/java/openjdk-17.0.2"
-set --export PATH $JAVA_HOME/bin $PATH
+# set --export JAVA_HOME "$HOME/.asdf/installs/java/openjdk-17.0.2"
+# set --export PATH $JAVA_HOME/bin $PATH

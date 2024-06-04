@@ -23,9 +23,18 @@ local plugins = {
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 
+	-- Easy LSP setup with mason
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
+	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"neovim/nvim-lspconfig", -- Configurations for Nvim LSP
+
+	--------------------------------------------------
+
+	--- JAVA PLUGINS
+	--------------------------------------------------
+	"mfussenegger/nvim-dap",
+	"mfussenegger/nvim-jdtls",
 
 	--------------------------------------------------
 	-- COLOR SCHEMES
@@ -52,19 +61,34 @@ local plugins = {
 	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
 	-- },
 	"interdependence/tree-sitter-htmldjango",
-	--------------------------------------------------
 
 	--------------------------------------------------
 	--- FUZZY FINDERS
+	--------------------------------------------------
 	{
 		"nvim-telescope/telescope.nvim",
 		-- version = "0.1.0",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
-	--------------------------------------------------
 
-	"mfussenegger/nvim-dap",
-	"mfussenegger/nvim-jdtls",
+	--------------------------------------------------
+	--- NOICE ie. commandline usage in a nice way
+	--------------------------------------------------
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		-- add any options here
+	-- 	},
+	-- 	dependencies = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		-- OPTIONAL:
+	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 		--   If not available, we use `mini` as the fallback
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- },
 
 	-- for searching through icons
 	"stevearc/dressing.nvim",
@@ -226,7 +250,9 @@ local plugins = {
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
 	"hrsh7th/cmp-nvim-lua", -- LSP source for nvim-cmp
-	-- "saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline", -- autocompletion for commandline via noice.nvim
+	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
 
 	-- Snippets
 	-- {
