@@ -96,7 +96,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.fly/bin $PATH
 
 # set path for phpenv
-set PATH ~/.phpenv/bin $PATH
+# set PATH ~/.phpenv/bin $PATH
 
 set PATH ~/Library/Python/3.12/bin $PATH
 
@@ -215,18 +215,7 @@ abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_v
 # abbr tumevpn "sudo openvpn --config /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
 abbr tumevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
-eval (phpenv init - | source)
-set -gx LDFLAGS "-L/usr/local/opt/bzip2/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/bzip2/include"
-source /Users/profkache/.phpbrew/phpbrew.fish
 
 # Adding path for maven
-set --export MVN_HOME "$HOME/sources/apache-maven-3.9.6"
-set --export PATH $MVN_HOME/bin $PATH
-
-# set --export JAVA_HOME "$HOME/.asdf/installs/java/openjdk-17.0.2"
-# set --export PATH $JAVA_HOME/bin $PATH
+# set --export MVN_HOME "$HOME/sources/apache-maven-3.9.6"
+# set --export PATH $MVN_HOME/bin $PATH
