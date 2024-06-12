@@ -5,8 +5,8 @@ local mux = wezterm.mux
 -- Maximize the window right away
 wezterm.on("gui-startup", function(cmd)
 	local _, _, window = mux.spawn_window(cmd or {})
-	-- window:gui_window():maximize()  -- this works for other operating systems
-	window:gui_window():toggle_fullscreen() -- works for mac os
+	window:gui_window():maximize() -- this works for other operating systems
+	-- window:gui_window():toggle_fullscreen() -- works for mac os
 end)
 
 local config = {}
@@ -21,7 +21,7 @@ end
 config.color_scheme = "Tokyo Night Storm"
 config.line_height = 1.25
 config.font = wezterm.font_with_fallback({
-	{ family = "Operator Mono SSm Lig", scale = 1.5, weight = "Light" },
+	{ family = "Operator Mono SSm Lig", scale = 1.45, weight = "Light" },
 	-- { family = "FuraCode Nerd Font", scale = 1.4, weight = "Light" },
 })
 
