@@ -8,6 +8,9 @@ end
 
 source ~/.asdf/asdf.fish
 
+# Set vi mode
+set -g fish_key_bindings fish_vi_key_bindings
+
 
 alias tconf="nvim ~/.tmux.conf"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -16,14 +19,14 @@ alias md="mkdir -p"
 
 
 # pipenv related aliases
-alias p8="pipenv --python 3.8"
-alias p7="pipenv --python 3.7"
-alias p9="pipenv --python 3.9"
-alias p10="pipenv --python 3.10"
-alias p11="pipenv --python 3.11"
-alias pin="pipenv install"
-alias pind="pipenv install --dev"
-alias psh="pipenv shell"
+# alias p8="pipenv --python 3.8"
+# alias p7="pipenv --python 3.7"
+# alias p9="pipenv --python 3.9"
+# alias p10="pipenv --python 3.10"
+# alias p11="pipenv --python 3.11"
+# alias pin="pipenv install"
+# alias pind="pipenv install --dev"
+# alias psh="pipenv shell"
 
 # django specific aliases
 alias rs="python manage.py runserver"
@@ -71,7 +74,7 @@ alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
 
 
 # OpenHIM console
-alias openhim-console="cd /var/www/html/openhim-console-1.15.0 && ns"
+# alias openhim-console="cd /var/www/html/openhim-console-1.15.0 && ns"
 
 # Airbyte Console
 alias airbyte="bash ~/sources/airbyte/run-ab-platform.sh"
@@ -90,7 +93,7 @@ alias pdp="pdr django-admin startproject config ."
 set PATH ~/.cargo/bin $PATH
 
 # set path for pipenv and pipenv-resolver
-set PATH ~/.local/bin $PATH
+# set PATH ~/.local/bin $PATH
 
 # set path for flyctl
 set PATH ~/.fly/bin $PATH
@@ -98,21 +101,22 @@ set PATH ~/.fly/bin $PATH
 # set path for phpenv
 # set PATH ~/.phpenv/bin $PATH
 
-set PATH ~/Library/Python/3.12/bin $PATH
+# Mac OS path
+# set PATH ~/Library/Python/3.12/bin $PATH
 
 # For mac os x only openvpn installation
-set PATH /usr/local/opt/openvpn/sbin $PATH
+# set PATH /usr/local/opt/openvpn/sbin $PATH
 
 # Set openssl new path
-set PATH /usr/local/openssl-3.0.7/bin $PATH
+# set PATH /usr/local/openssl-3.0.7/bin $PATH
 
 set PATH ~/.local/share/coursier/bin $PATH
 
 # set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+# set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 
 # set path for scala programming language and others
-set PATH ~/.sdkman/candidates/*/current/bin/ $PATH
+# set PATH ~/.sdkman/candidates/*/current/bin/ $PATH
 
 # set PATH __pypackages__/*/lib $PATH
 # set --export PYTHONPATH __pypackages__/*/lib
@@ -134,11 +138,11 @@ set -gx EDITOR nvim # Sets $EDITOR to nvim (neovim)
 # set -gx PATH $ANDROID_HOME/platform-tools $PATH
 
 ## Android for mac os x
-set --export ANDROID_HOME $HOME/Library/Android/sdk
-set -gx PATH $ANDROID_HOME/emulator $PATH
-set -gx PATH $ANDROID_HOME/tools $PATH
-set -gx PATH $ANDROID_HOME/tools/bin $PATH
-set -gx PATH $ANDROID_HOME/platform-tools $PATH
+# set --export ANDROID_HOME $HOME/Library/Android/sdk
+# set -gx PATH $ANDROID_HOME/emulator $PATH
+# set -gx PATH $ANDROID_HOME/tools $PATH
+# set -gx PATH $ANDROID_HOME/tools/bin $PATH
+# set -gx PATH $ANDROID_HOME/platform-tools $PATH
 
 # Function to see available storage in home folder
 function hdd
@@ -165,7 +169,7 @@ set -g theme_display_date no
 set -g theme_show_exit_status yes
 
 # enable virtual environement in the projects directory
-set -gx PIPENV_VENV_IN_PROJECT enabled
+# set -gx PIPENV_VENV_IN_PROJECT enabled
 
 # Abbreviations
 abbr sai 'sudo apt install'
@@ -190,7 +194,7 @@ abbr egrep 'egrep --color=auto'
 abbr fgrep 'fgrep --color=auto'
 abbr .conf 'cd ~/.config'
 abbr fconf 'nvim ~/.config/fish/config.fish'
-abbr metabase 'java -jar /opt/Metabase/metabase.jar'
+# abbr metabase 'java -jar /opt/Metabase/metabase.jar'
 
 # some tmux shortcuts
 abbr t tmux
@@ -205,11 +209,11 @@ abbr gcc 'gcc -Wall -pedantic -Wextra'
 
 abbr poetlocal 'poetry config --local virtualenvs.in-project true'
 
-abbr py8 "python3.8"
-abbr py9 "python3.9"
-abbr py10 "python3.10"
-abbr py11 "python3.11"
-abbr py12 "python3.12"
+abbr p8 "python3.8"
+abbr p9 "python3.9"
+abbr p10 "python3.10"
+abbr p11 "python3.11"
+abbr p12 "python3.12"
 abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
 abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
 # abbr tumevpn "sudo openvpn --config /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
