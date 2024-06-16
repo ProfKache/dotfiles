@@ -67,10 +67,10 @@ alias nrb="npm run build"
 # alias composer="/usr/local/bin/composer"
 # alias php="/opt/lampp/bin/php"
 # alias mysql="/opt/lampp/bin/mysql -u root -p"
-# alias mysql="/usr/bin/mysql -u root -p"  # for linux
-alias mysql="/usr/local/mysql/bin/mysql -u root -p"   # for mac os
+alias mysql="mysql -u root -p"  # for linux
+# alias mysql="/usr/local/mysql/bin/mysql -u root -p"   # for mac os
 alias mycli="mycli mysql://root@localhost:3306/mysql"
-alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
+# alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
 
 
 # OpenHIM console
