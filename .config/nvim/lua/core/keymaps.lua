@@ -121,12 +121,12 @@ map("n", "<leader>z", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- TELESCOPE MAPPINGS.
 ----------------------------
 
-map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-map("n", "<leader>fc", ":Telescope current_buffer_fuzzy_find<CR>", opts)
-map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
-map("n", "<leader>fm", ":Telescope harpoon marks<CR>")
+-- map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+-- map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+-- map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+-- map("n", "<leader>fc", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+-- map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
+-- map("n", "<leader>fm", ":Telescope harpoon marks<CR>")
 
 ----------------------------
 -- DIAGNOSTIC KEYMAPS.
