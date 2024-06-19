@@ -92,8 +92,8 @@ alias pdp="pdr django-admin startproject config ."
 # set path for cargo
 set PATH ~/.cargo/bin $PATH
 
-# set path for pipenv and pipenv-resolver
-# set PATH ~/.local/bin $PATH
+# set path for pipenv and pipenv-resolver, pdm etc.
+set PATH ~/.local/bin $PATH
 
 # set path for flyctl
 set PATH ~/.fly/bin $PATH
