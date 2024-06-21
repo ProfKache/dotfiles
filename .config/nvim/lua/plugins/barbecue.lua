@@ -1,3 +1,4 @@
+-- VS Code like winbar
 return {
 	"utilyre/barbecue.nvim",
 	name = "barbecue",
