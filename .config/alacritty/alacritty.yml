@@ -46,7 +46,7 @@ font:
     # family: JetBrainsMono Nerd Font
     # style: Light
     family: OperatorMono Nerd Font
-    style: Book
+    style: Light
   bold:
     # family: Operator Mono
     # family: JetBrainsMono Nerd Font
@@ -60,7 +60,8 @@ font:
     # family: Fira Code
     # style: Italic
   bold_italic:
-    family: Operator Mono
+    # family: Operator Mono
+    family: OperatorMono Nerd Font
     style: Bold Italic
     # family: JetBrainsMono Nerd Font
     # family: Fira Code
