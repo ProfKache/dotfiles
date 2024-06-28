@@ -8,7 +8,7 @@ return {
 				comments = "italic",
 				keywords = "italic",
 				functions = "none",
-				variables = "italic",
+				variables = "none",
 				string = "none",
 			},
 		})
