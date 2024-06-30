@@ -18,7 +18,8 @@ end
 
 -- Settings
 -- config.font = wezterm.font("JetBrains Mono")
-config.color_scheme = "Tokyo Night Storm"
+-- config.color_scheme = "Tokyo Night Storm"
+config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
 config.line_height = 1.25
 config.font = wezterm.font_with_fallback({
 	{ family = "Fira Code", scale = 1.3, weight = "Regular" },
