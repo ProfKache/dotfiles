@@ -16,16 +16,17 @@ return {
 	-- end,
 
 	"catppuccin/nvim",
+	name = "catppuccin",
 	config = function()
 		require("catppuccin").setup({
 			flavour = "mocha", -- latte, frappe, macchiato, mocha
-			transparent = false,
+			transparent = true,
 			styles = {
 				comments = { "italic" },
 				keywords = { "bold" },
 				functions = { "italic" },
 			},
 		})
-		require("catppuccin").load()
+		vim.cmd.colorscheme("catppuccin")
 	end,
 }
