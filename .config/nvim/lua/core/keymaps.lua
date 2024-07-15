@@ -40,7 +40,7 @@ map("n", "<leader>t", ":tabe<CR>", opts)
 map("n", ";", ":", opts)
 
 -- Move back to normal mode from insert mode by typing ,e
-map("i", ",,", "<Esc>", opts)
+-- map("i", ",,", "<Esc>", opts)
 -- map("i", ",,b", "<Esc>I", opts) -- Move to the beginning of the line while insert mode and enter insert mode
 -- map("i", ",,e", "<Esc>A", opts) -- Move to the end of the line while insert mode and enter insert mode
 
