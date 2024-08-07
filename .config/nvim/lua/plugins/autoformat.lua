@@ -40,7 +40,7 @@ return {
 			markdown = { { "prettierd", "prettier" } },
 			-- erb = { "htmlbeautifier" },
 			html = { "htmlbeautifier" },
-			htmldjango = { "htmlbeautifier" },
+			htmldjango = { "djlint" },
 			bash = { "beautysh" },
 			rust = { "rustfmt" },
 			yaml = { "yamlfix" },
