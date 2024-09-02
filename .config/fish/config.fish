@@ -112,6 +112,9 @@ set PATH ~/.fly/bin $PATH
 
 set PATH ~/.local/share/coursier/bin $PATH
 
+# Set temporal path
+set PATH /opt/temporal $PATH
+
 # set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 
