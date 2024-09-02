@@ -115,6 +115,10 @@ set PATH ~/.local/share/coursier/bin $PATH
 # Set temporal path
 set PATH /opt/temporal $PATH
 
+
+# Set path for python packages installed via pip through asdf
+set PATH ~/.asdf/installs/python/*/bin $PATH
+
 # set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 
