@@ -1,0 +1,74 @@
+import:
+  # uncomment the flavour you want below:
+  - ~/.config/alacritty/catppuccin-mocha.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+window:
+  opacity: 1
+  padding:
+    x: 0
+    y: 0
+  decorations: none
+  dimensions:
+    columns: 120
+    lines: 32
+env:
+  TERM: xterm-256color
+font:
+  normal:
+    # family: Operator Mono SSm
+    # family: JetBrainsMono Nerd Font
+    family: Fira Code Nerd Font
+    style: Regular
+  bold:
+    # family: Operator Mono
+    # family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
+    style: Book
+    # style: Bold
+  italic:
+    # family: FiraCode Nerd Font
+    # family: JetBrainsMono Nerd Font
+    family: Operator Mono
+    style: Light Italic
+    # family: Fira Code
+    # style: Italic
+  bold_italic:
+    # family: Operator Mono
+    family: FiraCode Nerd Font
+    style: Bold Italic
+    # family: JetBrainsMono Nerd Font
+    # family: Fira Code
+    # style: Bold Italic
+  # Point size
+  size: 16.7
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+  # Number of lines the viewport will move for every
+  # scrollback is enabled (hitstory > 0)
+  multiplier: 10
+# If `true`, bold text is drawn using the biright color
+draw_bold_text_with_bright_colors: true
+selection:
+  semantic_escape_chars: ",|`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+cursor:
+  # Cursor Style
+  style:
+    shape: Block
+    blinking: Always
+  unfocused_hollow: true
+# live_config_reload: true
+key_bindings:
+  - {key: N, mods: Control|Shift, action: SpawnNewInstance}
+  - {key: Q, mods: Control, action: Quit}
+  - {key: Return, mods: Alt, action: ToggleFullscreen}
