@@ -156,7 +156,33 @@ return {
 				},
 			},
 			jinja_lsp = {},
-			pyright = {},
+			ruff_lsp = {
+				-- init_options = {
+				-- 	-- Enable auto-fix on save if you want Ruff to automatically fix issues on format/save
+				-- 	settings = {
+				-- 		args = { "--fix" },
+				-- 	},
+				-- },
+			},
+			pyright = {
+				settings = {
+					pyright = {
+						disableOrganizeImports = true, -- Using Ruff
+						disableTaggedHints = true,
+					},
+					python = {
+						analysis = {
+							ignore = { "*" }, -- Using Ruff
+							-- typeCheckingMode = "off", -- Using mypy
+							diagnosticSeverityOverrides = {
+								-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
+								-- reportUndefinedVariable = "none",
+							},
+						},
+					},
+				},
+			},
+
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			--
@@ -184,7 +210,7 @@ return {
 					},
 				},
 			},
-			tsserver = {
+			ts_ls = {
 				settings = {
 					typescript = {
 						inlayHints = {
