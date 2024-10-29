@@ -131,6 +131,15 @@ return {
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			-- clangd = {},
+			-- intelephense = {},
+			phpactor = {
+				settings = {
+					init_options = {
+						["language_server_phpstan.enabled"] = false,
+						["language_server_psalm.enabled"] = false,
+					},
+				},
+			},
 			gopls = {
 				settings = {
 					gopls = {
