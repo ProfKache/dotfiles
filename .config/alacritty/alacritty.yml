@@ -17,32 +17,34 @@ env:
   TERM: xterm-256color
 font:
   normal:
-    # family: Operator Mono SSm
-    # family: JetBrainsMono Nerd Font
-    family: Fira Code Nerd Font
-    style: Regular
-  bold:
-    # family: Operator Mono
+    # family: OperatorMono Nerd Font
+    # family: Hack
     # family: JetBrainsMono Nerd Font
     family: FiraCode Nerd Font
-    style: Book
-    # style: Bold
+    # style: Italic
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    # family: JetBrainsMono Nerd Font
+    # family: FiraCode Nerd Font
+    # style: Book
+    style: SemiBold
   italic:
     # family: FiraCode Nerd Font
     # family: JetBrainsMono Nerd Font
-    family: Operator Mono SSm
-    style: Light Italic
+    family: Operator Mono Lig
+    # style: Light
     # family: Fira Code
-    # style: Italic
+    style: Light Italic
   bold_italic:
+    family: OperatorMono Nerd Font
+    style: Regular Italic
     # family: Operator Mono
-    family: FiraCode Nerd Font
-    style: Bold Italic
     # family: JetBrainsMono Nerd Font
     # family: Fira Code
     # style: Bold Italic
   # Point size
-  size: 16.7
+  size: 16.9
   offset:
     x: 0
     y: 0
