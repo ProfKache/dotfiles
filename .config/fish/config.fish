@@ -223,9 +223,10 @@ abbr p10 "python3.10"
 abbr p11 "python3.11"
 abbr p12 "python3.12"
 abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
-abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
+# abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
 # abbr tumevpn "sudo openvpn --config /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
-abbr tumevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
+# abbr tumevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela__ssl_vpn_config.ovpn"
+abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela-client-config.ovpn"
 
 
 # Adding path for maven
