@@ -155,14 +155,25 @@ return {
 					},
 				},
 			},
-			jinja_lsp = {},
-			ruff_lsp = {
-				-- init_options = {
-				-- 	-- Enable auto-fix on save if you want Ruff to automatically fix issues on format/save
-				-- 	settings = {
-				-- 		args = { "--fix" },
+			jinja_lsp = {
+				-- cmd = { "jinja-lsp" },
+				-- filetypes = { "htmldjango", "jinja", "rust" },
+				-- settings = {
+				-- 	jinja = {
+				-- 		template_root = "./templates", -- Change this to your Django template directory
+				-- 		globals = { "url", "static", "get_static_prefix" }, -- Add more as needed
 				-- 	},
 				-- },
+			},
+			ruff = {
+				settings = {
+					args = { "--fix" }, -- Optional: Customize CLI arguments (e.g., auto-fix issues)
+				},
+				init_options = {
+					settings = {
+						args = {}, -- Pass additional arguments if needed
+					},
+				},
 			},
 			pyright = {
 				settings = {
@@ -279,6 +290,8 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 			"jsonls",
+			"ruff",
+			"pyright",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
