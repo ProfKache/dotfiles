@@ -27,6 +27,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
+			go = { "gofumpt" },
 			javascript = { "prettierd", "prettier" },
 			typescript = { "prettierd", "prettier" },
 			java = { "google-java-format" },
