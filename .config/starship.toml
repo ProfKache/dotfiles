@@ -1,0 +1,80 @@
+[nodejs]
+format = "via [$symbol($version )]($style)"
+symbol = ' '
+
+[python]
+format = "via [$symbol($version)]($style)"
+symbol = "🐍 "
+# symbol = ' '
+
+[golang]
+format = "via [$symbol($version )]($style)"
+symbol = "🐹 "
+# symbol = " "
+
+[rust]
+format = "via [$symbol($version )]($style)"
+symbol = "🦀 "
+# symbol = "󱘗 "
+
+[lua]
+format = "via [$symbol($version )]($style)"
+symbol = "🌙 "
+# symbol = " "
+
+[php]
+format = "via [$symbol($version )]($style)"
+symbol = "🐘 "
+
+[java]
+format = "via [$symbol($version )]($style)"
+symbol = "☕ "
+
+[docker_context]
+format = 'via [🐋 $context](blue bold)'
+
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
