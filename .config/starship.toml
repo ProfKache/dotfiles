@@ -33,6 +33,11 @@ symbol = "☕ "
 [docker_context]
 format = 'via [🐋 $context](blue bold)'
 
+[sudo]
+style = 'bold green'
+symbol = '🤵 '
+disabled = false
+
 
 [os.symbols]
 Alpaquita = " "
