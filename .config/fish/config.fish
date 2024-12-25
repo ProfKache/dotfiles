@@ -118,7 +118,8 @@ set PATH /opt/temporal $PATH
 
 
 # Set path for python packages installed via pip through asdf
-set PATH ~/.asdf/installs/python/*/bin $PATH
+# set PATH ~/.asdf/installs/python/*/bin $PATH
+set PATH ~/.asdf/shims ~/.asdf/bin $PATH
 
 # set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
@@ -233,3 +234,7 @@ abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela
 
 # Change the terminal prompt
 starship init fish | source
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
