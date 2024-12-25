@@ -185,20 +185,31 @@ return {
 					},
 				},
 			},
-			pyright = {
+			-- pyright = {
+			-- 	settings = {
+			-- 		pyright = {
+			-- 			disableOrganizeImports = true, -- Using Ruff
+			-- 			disableTaggedHints = true,
+			-- 		},
+			-- 		python = {
+			-- 			analysis = {
+			-- 				ignore = { "*" }, -- Using Ruff
+			-- 				-- typeCheckingMode = "off", -- Using mypy
+			-- 				diagnosticSeverityOverrides = {
+			-- 					-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
+			-- 					-- reportUndefinedVariable = "none",
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
+			pylsp = {
 				settings = {
-					pyright = {
-						disableOrganizeImports = true, -- Using Ruff
-						disableTaggedHints = true,
-					},
-					python = {
-						analysis = {
-							ignore = { "*" }, -- Using Ruff
-							-- typeCheckingMode = "off", -- Using mypy
-							diagnosticSeverityOverrides = {
-								-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
-								-- reportUndefinedVariable = "none",
-							},
+					pylsp = {
+						plugins = {
+							pylint = { enabled = false }, -- Optional, disable if not using pylint
+							rope_autoimport = { enabled = true }, -- Auto-import suggestions
+							django = { enabled = true }, -- Enable Django-specific features
 						},
 					},
 				},
@@ -298,7 +309,6 @@ return {
 			"stylua", -- Used to format Lua code
 			"jsonls",
 			"ruff",
-			"pyright",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
