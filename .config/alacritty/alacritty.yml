@@ -25,7 +25,7 @@ font:
     style: Light
   bold:
     family: CaskaydiaCove NF
-    style: Bold
+    style: SemiBold
     # family: BlexMono Nerd Font
     # style: Bold
     # family: FiraCode Nerd Font
