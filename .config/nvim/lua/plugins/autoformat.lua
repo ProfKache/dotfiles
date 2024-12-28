@@ -44,7 +44,7 @@ return {
 			htmldjango = { "djlint" },
 			bash = { "beautysh" },
 			rust = { "rustfmt" },
-			yaml = { "yamlfix" },
+			yaml = { "yamlfmt" },
 			toml = { "taplo" },
 			css = { "prettierd" },
 			scss = { "prettierd" },
