@@ -1,0 +1,80 @@
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Alt"
+
+[general]
+import = ["/home/profkache/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16.5
+
+[font.bold]
+family = "CaskaydiaCove NF"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "CaskaydiaCove NF"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "CaskaydiaCove NF"
+style = "ExtraLight Italic"
+
+[font.normal]
+family = "CaskaydiaCove NF"
+style = "Light"
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 10000
+multiplier = 10
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ''',|`|:"' ()[]{}<>	'''
+
+[window]
+decorations = "none"
+opacity = 1
+
+[window.dimensions]
+columns = 120
+lines = 32
+
+[window.padding]
+x = 0
+y = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[keyboard]
