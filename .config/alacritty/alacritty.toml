@@ -55,8 +55,8 @@ history = 10000
 multiplier = 10
 
 [selection]
+semantic_escape_chars = ",|`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
-semantic_escape_chars = ''',|`|:"' ()[]{}<>	'''
 
 [colors]
 draw_bold_text_with_bright_colors = true
