@@ -12,7 +12,6 @@ Clone the repository and install the plugins:
 
 ```sh
 git clone git@github.com:ProfKache/dotfiles ~/.config/ProfKache/dotfiles
-NVIM_APPNAME=ProfKache/dotfiles/.config/nvim nvim --headless +"PackerSync" +qa
 ```
 
 Open Neovim with this config:
@@ -23,9 +22,10 @@ NVIM_APPNAME=ProfKache/dotfiles/.config/nvim nvim
 
 ## Plugins
 
-### code-runner
+### bars-and-lines
 
-- [michaelb/sniprun](https://dotfyle.com/plugins/michaelb/sniprun)
+- [utilyre/barbecue.nvim](https://dotfyle.com/plugins/utilyre/barbecue.nvim)
+- [SmiteshP/nvim-navic](https://dotfyle.com/plugins/SmiteshP/nvim-navic)
 
 ### color
 
@@ -33,31 +33,34 @@ NVIM_APPNAME=ProfKache/dotfiles/.config/nvim nvim
 
 ### colorscheme
 
-- [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
-- [olimorris/onedarkpro.nvim](https://dotfyle.com/plugins/olimorris/onedarkpro.nvim)
 - [navarasu/onedark.nvim](https://dotfyle.com/plugins/navarasu/onedark.nvim)
+- [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
 
 ### comment
 
 - [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
-- [terrortylor/nvim-comment](https://dotfyle.com/plugins/terrortylor/nvim-comment)
+- [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 
 ### completion
 
 - [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
 
-### debugging
+### cursorline
 
-- [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
+- [RRethy/vim-illuminate](https://dotfyle.com/plugins/RRethy/vim-illuminate)
 
 ### editing-support
 
-- [Wansmer/treesj](https://dotfyle.com/plugins/Wansmer/treesj)
+- [nvim-treesitter/nvim-treesitter-context](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-context)
+- [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
+
+### file-explorer
+
+- [nvim-tree/nvim-tree.lua](https://dotfyle.com/plugins/nvim-tree/nvim-tree.lua)
 
 ### formatting
 
-- [lukas-reineke/lsp-format.nvim](https://dotfyle.com/plugins/lukas-reineke/lsp-format.nvim)
-- [mhartington/formatter.nvim](https://dotfyle.com/plugins/mhartington/formatter.nvim)
+- [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
 
 ### fuzzy-finder
 
@@ -65,24 +68,32 @@ NVIM_APPNAME=ProfKache/dotfiles/.config/nvim nvim
 
 ### git
 
-- [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+- [kdheepak/lazygit.nvim](https://dotfyle.com/plugins/kdheepak/lazygit.nvim)
 - [f-person/git-blame.nvim](https://dotfyle.com/plugins/f-person/git-blame.nvim)
+- [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 
 ### icon
 
 - [ziontee113/icon-picker.nvim](https://dotfyle.com/plugins/ziontee113/icon-picker.nvim)
+- [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
 
 ### indent
 
 - [lukas-reineke/indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
 
+### keybinding
+
+- [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
+
 ### lsp
 
-- [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
-- [jose-elias-alvarez/null-ls.nvim](https://dotfyle.com/plugins/jose-elias-alvarez/null-ls.nvim)
+- [linrongbin16/lsp-progress.nvim](https://dotfyle.com/plugins/linrongbin16/lsp-progress.nvim)
+- [tamago324/nlsp-settings.nvim](https://dotfyle.com/plugins/tamago324/nlsp-settings.nvim)
 - [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
+- [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
 - [mfussenegger/nvim-jdtls](https://dotfyle.com/plugins/mfussenegger/nvim-jdtls)
-- [scalameta/nvim-metals](https://dotfyle.com/plugins/scalameta/nvim-metals)
+- [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
+- [b0o/SchemaStore.nvim](https://dotfyle.com/plugins/b0o/SchemaStore.nvim)
 
 ### lsp-installer
 
@@ -92,21 +103,28 @@ NVIM_APPNAME=ProfKache/dotfiles/.config/nvim nvim
 
 - [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
 
+### marks
+
+- [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
+
+### media
+
+- [adelarsq/image_preview.nvim](https://dotfyle.com/plugins/adelarsq/image_preview.nvim)
+
 ### nvim-dev
 
+- [folke/neodev.nvim](https://dotfyle.com/plugins/folke/neodev.nvim)
 - [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
+- [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
 
 ### plugin-manager
 
-- [wbthomason/packer.nvim](https://dotfyle.com/plugins/wbthomason/packer.nvim)
+- [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
 
 ### snippet
 
 - [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
-
-### startup
-
-- [glepnir/dashboard-nvim](https://dotfyle.com/plugins/glepnir/dashboard-nvim)
+- [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
 
 ### statusline
 
@@ -114,48 +132,29 @@ NVIM_APPNAME=ProfKache/dotfiles/.config/nvim nvim
 
 ### syntax
 
-- [kylechui/nvim-surround](https://dotfyle.com/plugins/kylechui/nvim-surround)
-- [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 - [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
+- [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 
 ### tabline
 
 - [romgrk/barbar.nvim](https://dotfyle.com/plugins/romgrk/barbar.nvim)
 
+### terminal-integration
+
+- [akinsho/toggleterm.nvim](https://dotfyle.com/plugins/akinsho/toggleterm.nvim)
+
 ### utility
 
-- [echasnovski/mini.animate](https://dotfyle.com/plugins/echasnovski/mini.animate)
-- [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
+- [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
 - [stevearc/dressing.nvim](https://dotfyle.com/plugins/stevearc/dressing.nvim)
+- [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
 
 ## Language Servers
 
-- clangd
-- cmake
-- cssls
-- custom_elements_ls
-- dockerls
-- emmet_ls
-- golangci_lint_ls
-- gopls
-- gradle_ls
-- graphql
 - html
 - jdtls
 - jsonls
-- lua_ls
-- metals
-- phpactor
-- pylsp
-- pyright
-- rust_analyzer
-- solidity
-- sqlls
-- sqls
-- svelte
-- tailwindcss
+- standardrb
 - taplo
-- tsserver
-- yamlls
 
 This readme was generated by [Dotfyle](https://dotfyle.com)
