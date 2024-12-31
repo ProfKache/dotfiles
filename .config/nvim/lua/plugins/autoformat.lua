@@ -26,7 +26,15 @@ return {
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "isort", "black" },
+			python = {
+				-- "isort", "black"
+				-- To fix auto-fixable lint errors.
+				-- "ruff_fix",
+				-- To run the Ruff formatter.
+				"ruff_format",
+				-- To organize the imports.
+				"ruff_organize_imports",
+			},
 			go = { "gofumpt" },
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
