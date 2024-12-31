@@ -207,9 +207,13 @@ return {
 				settings = {
 					pylsp = {
 						plugins = {
-							pylint = { enabled = false }, -- Optional, disable if not using pylint
-							rope_autoimport = { enabled = true }, -- Auto-import suggestions
-							django = { enabled = true }, -- Enable Django-specific features
+							pycodestyle = { enabled = false },
+							pyflakes = { enabled = false },
+							pylint = { enabled = false },
+							mccabe = { enabled = false },
+							pydocstyle = { enabled = false },
+							rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
+							-- django = { enabled = true }, -- Enable Django-specific features
 						},
 					},
 				},
