@@ -85,6 +85,9 @@ alias pdr="pdm run"
 alias pdi="pdm init"
 alias pdp="pdr django-admin startproject config ."
 
+# Apache NI-FI alias
+alias nifi="bash /opt/nifi/bin/nifi.sh"
+
 
 # Setting GO Path
 # set PATH /usr/local/go/bin $PATH
