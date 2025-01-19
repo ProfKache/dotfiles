@@ -185,6 +185,18 @@ return {
 					},
 				},
 			},
+			require("lspconfig").djlsp.setup({
+				cmd = { "/home/profkache/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
+				init_options = {
+					djlsp = {
+						django_settings_module = "config.settings", -- Replace with your Django settings module
+						docker_compose_file = "docker-compose.yml", -- Optional: Path to your Docker Compose file
+						docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
+					},
+				},
+				filetypes = { "htmldjango", "jinja" },
+				root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
+			}),
 			-- pyright = {
 			-- 	settings = {
 			-- 		pyright = {
