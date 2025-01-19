@@ -1,12 +1,12 @@
-vim.filetype.add({
-	extension = {
-		-- html = "htmldjango",
-		htmldjango = "htmldjango",
-		jinja = "jinja",
-		jinja2 = "jinja",
-		j2 = "jinja",
-	},
-})
+-- vim.filetype.add({
+-- 	extension = {
+-- 		-- html = "htmldjango",
+-- 		htmldjango = "htmldjango",
+-- 		jinja = "jinja",
+-- 		jinja2 = "jinja",
+-- 		j2 = "jinja",
+-- 	},
+-- })
 
 -- LSP Configuration & Plugins
 return {
@@ -165,16 +165,16 @@ return {
 					},
 				},
 			},
-			jinja_lsp = {
-				cmd = { "jinja-lsp" }, -- Ensure this points to the jinja-lsp binary
-				filetypes = { "htmldjango", "jinja" }, -- Include htmldjango filetype
-				settings = {
-					jinja = {
-						template_root = "./templates", -- Change to your template directory
-						globals = { "url", "static", "get_static_prefix" }, -- Add any global Django template functions or filters
-					},
-				},
-			},
+			-- jinja_lsp = {
+			-- 	cmd = { "jinja-lsp" }, -- Ensure this points to the jinja-lsp binary
+			-- 	filetypes = { "htmldjango", "jinja" }, -- Include htmldjango filetype
+			-- 	settings = {
+			-- 		jinja = {
+			-- 			template_root = "./templates", -- Change to your template directory
+			-- 			globals = { "url", "static", "get_static_prefix" }, -- Add any global Django template functions or filters
+			-- 		},
+			-- 	},
+			-- },
 			ruff = {
 				settings = {
 					args = { "--fix" }, -- Optional: Customize CLI arguments (e.g., auto-fix issues)
