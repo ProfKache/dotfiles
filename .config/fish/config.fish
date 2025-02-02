@@ -120,6 +120,9 @@ set PATH ~/.local/share/coursier/bin $PATH
 set PATH /opt/temporal $PATH
 
 
+# set -x ASDF_DATA_DIR "/home/profkache/.asdf"
+# set -x PATH "$ASDF_DATA_DIR/shims" $PATH
+
 # Set path for python packages installed via pip through asdf
 # set PATH ~/.asdf/installs/python/*/bin $PATH
 set PATH ~/.asdf/shims ~/.asdf/bin $PATH
