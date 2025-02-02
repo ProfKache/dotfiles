@@ -6,7 +6,7 @@ end
 #bass source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
 #end
 
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
 
 # Set vi mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -119,13 +119,15 @@ set PATH ~/.local/share/coursier/bin $PATH
 # Set temporal path
 set PATH /opt/temporal $PATH
 
+set PATH ~/.asdf/ $PATH
+set PATH ~/.asdf/shims $PATH
 
-# set -x ASDF_DATA_DIR "/home/profkache/.asdf"
-# set -x PATH "$ASDF_DATA_DIR/shims" $PATH
+# set -gx ASDF_DATA_DIR "/home/profkache/.asdf"
+# set PATH "$ASDF_DATA_DIR/shims" $PATH
 
 # Set path for python packages installed via pip through asdf
 # set PATH ~/.asdf/installs/python/*/bin $PATH
-set PATH ~/.asdf/shims ~/.asdf/bin $PATH
+# set PATH ~/.asdf/shims ~/.asdf/bin $PATH
 
 # set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
@@ -240,6 +242,23 @@ abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela
 
 # Change the terminal prompt
 starship init fish | source
+
+# ASDF configuration code
+if test -z $ASDF_DATA_DIR
+    set _asdf_shims "$HOME/.asdf/shims"
+else
+    set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
+
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+if not contains $_asdf_shims $PATH
+    set -gx --prepend PATH $_asdf_shims
+end
+set --erase _asdf_shims
+
+# end ASDF configuration code
+
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
