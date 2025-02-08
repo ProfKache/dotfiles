@@ -56,7 +56,7 @@ return {
 			toml = { "taplo" },
 			css = { "prettierd" },
 			scss = { "prettierd" },
-			ruby = { "rubyfmt" },
+			ruby = { "solargraph" },
 			erb = { "erb-formatter" },
 		},
 		-- formatters = {
