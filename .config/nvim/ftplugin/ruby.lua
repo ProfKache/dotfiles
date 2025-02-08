@@ -8,12 +8,14 @@ lspconfig.solargraph.setup({
 	end,
 	settings = {
 		solargraph = {
+			autoformat = true,
 			diagnostics = true,
 			formatting = true,
 			completion = true,
 			diagnostics_ignore = {
-				"Lint/MissingMagicComment", -- Ignore the frozen string literal warning
+				"Style/FrozenStringLiteralComment", -- Ignore the frozen string literal warning
 				"Lint/UselessAssignment", -- Ignore unused assignments
+				"Style/StringLiterals", -- Ignore string interpolation (Single and Double quotes)
 			},
 		},
 	},
