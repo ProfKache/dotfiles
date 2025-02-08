@@ -11,6 +11,10 @@ lspconfig.solargraph.setup({
 			diagnostics = true,
 			formatting = true,
 			completion = true,
+			diagnostics_ignore = {
+				"Lint/MissingMagicComment", -- Ignore the frozen string literal warning
+				"Lint/UselessAssignment", -- Ignore unused assignments
+			},
 		},
 	},
 })
