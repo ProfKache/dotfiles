@@ -56,6 +56,7 @@ return {
 			toml = { "taplo" },
 			css = { "prettierd" },
 			scss = { "prettierd" },
+			ruby = { "rubyfmt" },
 		},
 		-- formatters = {
 		-- 	djlint = {
