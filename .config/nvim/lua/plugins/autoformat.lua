@@ -57,6 +57,7 @@ return {
 			css = { "prettierd" },
 			scss = { "prettierd" },
 			ruby = { "rubyfmt" },
+			erb = { "erb_formatter" },
 		},
 		-- formatters = {
 		-- 	djlint = {
