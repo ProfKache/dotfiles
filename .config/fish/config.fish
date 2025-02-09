@@ -122,6 +122,9 @@ set PATH /opt/temporal $PATH
 set PATH ~/.asdf/ $PATH
 set PATH ~/.asdf/shims $PATH
 
+# Set path for elixir shell history
+set -x ERL_AFLAGS "-kernel shell_history enabled"
+
 # set -gx ASDF_DATA_DIR "/home/profkache/.asdf"
 # set PATH "$ASDF_DATA_DIR/shims" $PATH
 
