@@ -1,13 +1,3 @@
--- vim.filetype.add({
--- 	extension = {
--- 		-- html = "htmldjango",
--- 		htmldjango = "htmldjango",
--- 		jinja = "jinja",
--- 		jinja2 = "jinja",
--- 		j2 = "jinja",
--- 	},
--- })
-
 -- LSP Configuration & Plugins
 return {
 	"neovim/nvim-lspconfig",
@@ -165,7 +155,7 @@ return {
 					},
 				},
 			},
-			elixirls = {},
+			-- elixirls = {},
 			-- jinja_lsp = {
 			-- 	cmd = { "jinja-lsp" }, -- Ensure this points to the jinja-lsp binary
 			-- 	filetypes = { "htmldjango", "jinja" }, -- Include htmldjango filetype
@@ -307,6 +297,16 @@ return {
 						-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 						-- diagnostics = { disable = { 'missing-fields' } },
 					},
+				},
+			},
+			htmx = {
+				filetypes = {
+					"html",
+					"htmldjango",
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
 				},
 			},
 		}
