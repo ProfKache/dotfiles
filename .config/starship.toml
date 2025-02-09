@@ -2,20 +2,24 @@
 format = "via [$symbol($version )]($style)"
 symbol = ' '
 
+[elixir]
+format = "via [$symbol($version )](purple bold)"
+symbol = " "
+
 [python]
-format = "via [$symbol($version)]($style)"
+format = "via [$symbol($version)](green bold)"
 symbol = " "
 
 [golang]
-format = "via [$symbol($version )]($style)"
+format = "via [$symbol($version )](blue bold)"
 symbol = " "
 
 [rust]
-format = "via [$symbol($version )]($style)"
+format = "via [$symbol($version )](red bold)"
 symbol = "󱘗 "
 
 [lua]
-format = "via [$symbol($version )]($style)"
+format = "via [$symbol($version )](blue bold)"
 symbol = "󰢱 "
 
 [php]
@@ -23,11 +27,19 @@ format = "via [$symbol($version )]($style)"
 symbol = " "
 
 [java]
-format = "via [$symbol($version )]($style)"
+format = "via [$symbol($version )](red bold)"
 symbol = "☕ "
 
 [docker_context]
-format = 'via [🐋 $context](blue bold)'
+format = 'via [$symbol($context)](blue bold)'
+symbol = " "
+
+[dart]
+format = 'via [🔰$version](bold red) '
+
+[ruby]
+format = "via [$symbol($version )]($style)"
+symbol = " "
 
 # [sudo]
 # style = 'bold green'
