@@ -121,6 +121,7 @@ set PATH /opt/temporal $PATH
 
 set PATH ~/.asdf/ $PATH
 set PATH ~/.asdf/shims $PATH
+set PATH ~/.asdf/installs/nodejs/*/bin $PATH
 
 # Set path for elixir shell history
 set -x ERL_AFLAGS "-kernel shell_history enabled"
