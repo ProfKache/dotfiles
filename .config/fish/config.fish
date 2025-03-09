@@ -17,6 +17,9 @@ alias tconf="nvim ~/.tmux.conf"
 
 alias md="mkdir -p"
 
+# Set path for rye
+set -Ua fish_user_paths "$HOME/.rye/shims"
+
 
 # pipenv related aliases
 # alias p8="pipenv --python 3.8"
@@ -101,6 +104,9 @@ set PATH ~/.local/bin $PATH
 
 # set path for flyctl
 set PATH ~/.fly/bin $PATH
+
+
+# set PATH /opt/glibc-2.38/lib $PATH
 
 # set path for phpenv
 # set PATH ~/.phpenv/bin $PATH
