@@ -155,7 +155,7 @@ return {
 					},
 				},
 			},
-			-- elixirls = {},
+			elixirls = {},
 			-- jinja_lsp = {
 			-- 	cmd = { "jinja-lsp" }, -- Ensure this points to the jinja-lsp binary
 			-- 	filetypes = { "htmldjango", "jinja" }, -- Include htmldjango filetype
