@@ -18,7 +18,7 @@ alias tconf="nvim ~/.tmux.conf"
 alias md="mkdir -p"
 
 # Set path for rye
-set -Ua fish_user_paths "$HOME/.rye/shims"
+# set -Ua fish_user_paths "$HOME/.rye/shims"
 
 
 # pipenv related aliases
