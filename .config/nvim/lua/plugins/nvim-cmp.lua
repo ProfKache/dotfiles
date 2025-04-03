@@ -42,6 +42,10 @@ return {
 		local lspkind = require("lspkind")
 		luasnip.config.setup({})
 
+		cmp.config.formatting = {
+			format = require("tailwindcss-colorizer-cmp").formatter,
+		}
+
 		cmp.setup({
 			snippet = {
 				expand = function(args)
