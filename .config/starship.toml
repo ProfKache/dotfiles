@@ -2,6 +2,10 @@
 format = "via [$symbol($version )]($style)"
 symbol = ' '
 
+[c]
+format = "via [$symbol($version )]($style)"
+symbol = ' '
+
 [elixir]
 format = "via [$symbol($version )](purple bold)"
 symbol = " "
