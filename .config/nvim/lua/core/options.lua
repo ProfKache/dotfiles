@@ -93,6 +93,16 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 au Bufread,BufNewFile *.kv set filetype=kivy shiftwidth=4 tabstop=4 softtabstop=4 expandtab ft.kivy='#%s'
 ]])
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = {
+		"**/templates/**/*.html", -- typical Django template path
+		"**/templates/*.html", -- in case templates are at root
+	},
+	callback = function()
+		vim.bo.filetype = "htmldjango"
+	end,
+})
+
 -- Enable json quotes to be displayed
 vim.cmd([[
 autocmd Filetype json let g:indentLine_setConceal = 0
