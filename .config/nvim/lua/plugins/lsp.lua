@@ -188,6 +188,15 @@ return {
 				filetypes = { "htmldjango", "jinja" },
 				root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
 			}),
+			require("lspconfig").lua_ls.setup({
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" }, -- Tells the server that `vim` is a global
+						},
+					},
+				},
+			}),
 			-- pyright = {
 			-- 	settings = {
 			-- 		pyright = {
