@@ -107,3 +107,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.cmd([[
 autocmd Filetype json let g:indentLine_setConceal = 0
 ]])
+
+vim.diagnostic.config({
+	virtual_text = true, -- Enables inline text
+})
