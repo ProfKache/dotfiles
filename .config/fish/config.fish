@@ -136,7 +136,7 @@ set -x ERL_AFLAGS "-kernel shell_history enabled"
 # set PATH "$ASDF_DATA_DIR/shims" $PATH
 
 # Set path for python packages installed via pip through asdf
-# set PATH ~/.asdf/installs/python/*/bin $PATH
+set PATH ~/.asdf/installs/python/*/bin $PATH
 # set PATH ~/.asdf/shims ~/.asdf/bin $PATH
 
 # set path for PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
