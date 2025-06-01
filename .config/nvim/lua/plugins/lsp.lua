@@ -231,17 +231,17 @@ return {
 				},
 			},
 
-			require("lspconfig").pylsp.setup({
-				settings = {
-					pylsp = {
-						plugins = {
-							pycodestyle = {
-								ignore = { "E501" },
-							},
-						},
-					},
-				},
-			}),
+			-- require("lspconfig").pylsp.setup({
+			-- 	settings = {
+			-- 		pylsp = {
+			-- 			plugins = {
+			-- 				pycodestyle = {
+			-- 					ignore = { "E501" },
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	},
+			-- }),
 
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
