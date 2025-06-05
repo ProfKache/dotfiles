@@ -155,17 +155,9 @@ return {
 					},
 				},
 			},
+
 			elixirls = {},
-			-- jinja_lsp = {
-			-- 	cmd = { "jinja-lsp" }, -- Ensure this points to the jinja-lsp binary
-			-- 	filetypes = { "htmldjango", "jinja" }, -- Include htmldjango filetype
-			-- 	settings = {
-			-- 		jinja = {
-			-- 			template_root = "./templates", -- Change to your template directory
-			-- 			globals = { "url", "static", "get_static_prefix" }, -- Add any global Django template functions or filters
-			-- 		},
-			-- 	},
-			-- },
+
 			ruff = {
 				settings = {
 					args = { "--fix" }, -- Optional: Customize CLI arguments (e.g., auto-fix issues)
@@ -176,37 +168,54 @@ return {
 					},
 				},
 			},
+
 			require("lspconfig").djlsp.setup({
-				cmd = { "/home/profkache/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
+				cmd = { "~/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
 				init_options = {
 					djlsp = {
 						django_settings_module = "config.settings", -- Replace with your Django settings module
-						docker_compose_file = "docker-compose.yml", -- Optional: Path to your Docker Compose file
+						docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
 						docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
 					},
 				},
 				filetypes = { "htmldjango", "jinja" },
 				root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
 			}),
-			-- pyright = {
+
+			require("lspconfig").lua_ls.setup({
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
+						},
+						diagnostics = {
+							globals = { "vim" }, -- Tells the server that `vim` is a global
+							disable = { "missing-fields" },
+						},
+					},
+				},
+			}),
+
+			-- pylsp = {
 			-- 	settings = {
-			-- 		pyright = {
-			-- 			disableOrganizeImports = true, -- Using Ruff
-			-- 			disableTaggedHints = true,
-			-- 		},
-			-- 		python = {
-			-- 			analysis = {
-			-- 				ignore = { "*" }, -- Using Ruff
-			-- 				-- typeCheckingMode = "off", -- Using mypy
-			-- 				diagnosticSeverityOverrides = {
-			-- 					-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
-			-- 					-- reportUndefinedVariable = "none",
-			-- 				},
+			-- 		pylsp = {
+			-- 			plugins = {
+			-- 				pycodestyle = { enabled = false },
+			-- 				pyflakes = { enabled = false },
+			-- 				pylint = { enabled = false },
+			-- 				mccabe = { enabled = false },
+			-- 				pydocstyle = { enabled = false },
+			-- 				flake8 = { enabled = false },
+			-- 				ruff = { enabled = false }, -- only needed if using Ruff via pylsp
+			-- 				yapf = { enabled = false },
+			-- 				autopep8 = { enabled = false },
+			-- 				rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
 			-- 			},
 			-- 		},
 			-- 	},
 			-- },
-			pylsp = {
+
+			require("lspconfig").pylsp.setup({
 				settings = {
 					pylsp = {
 						plugins = {
@@ -216,11 +225,10 @@ return {
 							mccabe = { enabled = false },
 							pydocstyle = { enabled = false },
 							rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
-							-- django = { enabled = true }, -- Enable Django-specific features
 						},
 					},
 				},
-			},
+			}),
 
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -249,6 +257,7 @@ return {
 					},
 				},
 			},
+
 			ts_ls = {
 				settings = {
 					typescript = {
@@ -288,17 +297,6 @@ return {
 				},
 			},
 
-			lua_ls = {
-				settings = {
-					Lua = {
-						completion = {
-							callSnippet = "Replace",
-						},
-						-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-						-- diagnostics = { disable = { 'missing-fields' } },
-					},
-				},
-			},
 			htmx = {
 				filetypes = {
 					"html",

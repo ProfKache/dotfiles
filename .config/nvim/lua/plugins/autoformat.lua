@@ -48,7 +48,7 @@ return {
 			-- ruby = { "standardrb" },
 			markdown = { "prettierd" },
 			-- erb = { "htmlbeautifier" },
-			html = { "htmlbeautifier" },
+			html = { "htmlbeautifier", "prettierd" },
 			htmldjango = { "djlint" },
 			bash = { "beautysh" },
 			rust = { "rustfmt" },
