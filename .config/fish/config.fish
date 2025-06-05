@@ -94,6 +94,7 @@ alias nifi="bash /opt/nifi/bin/nifi.sh"
 
 # Setting GO Path
 # set PATH /usr/local/go/bin $PATH
+
 #set PATH $HOME/Android/Sdk $PATH
 
 # set path for cargo
