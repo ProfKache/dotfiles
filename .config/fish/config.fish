@@ -92,8 +92,8 @@ alias pdp="pdr django-admin startproject config ."
 alias nifi="bash /opt/nifi/bin/nifi.sh"
 
 
-# Setting GO Path
-# set PATH /usr/local/go/bin $PATH
+# Setting GOLANG Path
+set PATH /usr/local/go/bin $PATH
 
 #set PATH $HOME/Android/Sdk $PATH
 
@@ -126,9 +126,13 @@ set PATH ~/.local/share/coursier/bin $PATH
 # Set temporal path
 set PATH /opt/temporal $PATH
 
-set PATH ~/.asdf/ $PATH
-set PATH ~/.asdf/shims $PATH
-set PATH ~/.asdf/installs/nodejs/*/bin $PATH
+# ASDF Setup *** New ***  
+# set -x PATH ~/.asdf/bin $PATH
+set -x PATH ~/go/bin $PATH
+set -x PATH ~/bin $PATH  # Adding the version for asdf
+
+# set PATH ~/.asdf/shims $PATH
+# set PATH ~/.asdf/installs/nodejs/*/bin $PATH
 
 # Set path for elixir shell history
 set -x ERL_AFLAGS "-kernel shell_history enabled"
