@@ -22,7 +22,7 @@ end
 config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
 config.line_height = 1.25
 config.font = wezterm.font_with_fallback({
-	{ family = "Fira Code", scale = 1.3, weight = "Regular" },
+	{ family = "Fira Code", scale = 1.38, weight = "Regular" },
 	-- { family = "BlexMono Nerd Font", scale = 1.45, weight = "Regular" },
 	-- { family = "Operator Mono SSm Lig", scale = 1.45, weight = "Light" },
 	-- { family = "FuraCode Nerd Font", scale = 1.4, weight = "Light" },
