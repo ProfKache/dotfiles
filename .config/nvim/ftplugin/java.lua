@@ -173,3 +173,46 @@ end
 
 -- This starts a new client & server, or attaches to an existing client & server based on the `root_dir`.
 jdtls.start_or_attach(config)
+
+-- local overseer = require("overseer")
+--
+-- -- Function to find the main class
+-- local function find_main_class()
+-- 	local handle = io.popen("grep -rl 'public static void main' src/main/java")
+-- 	if not handle then
+-- 		return nil
+-- 	end
+--
+-- 	local result = handle:read("*a")
+-- 	handle:close()
+--
+-- 	local path = result:match("[^\r\n]+")
+-- 	if not path then
+-- 		return nil
+-- 	end
+--
+-- 	local class_path = path:gsub("^src/main/java/", ""):gsub("%.java$", "")
+-- 	local main_class = class_path:gsub("/", ".")
+-- 	return main_class
+-- end
+--
+-- -- Keymap to run the main class via Maven using Overseer
+-- vim.keymap.set("n", "<leader>r", function()
+-- 	local main_class = find_main_class()
+-- 	if not main_class then
+-- 		vim.notify("❌ Could not find a Java main class.", vim.log.levels.ERROR)
+-- 		return
+-- 	end
+--
+-- 	overseer.run_template({
+-- 		name = "Run Java Main Class",
+-- 		cmd = { "mvn", "exec:java", "-Dexec.mainClass=" .. main_class },
+-- 		components = {
+-- 			"default",
+-- 			"on_output_quickfix",
+-- 			{ "on_complete_notify", statuses = { "FAILURE" } },
+-- 		},
+-- 		env = {},
+-- 		cwd = vim.fn.getcwd(),
+-- 	})
+-- end, { desc = "Run Java (auto-detect main class)" })
