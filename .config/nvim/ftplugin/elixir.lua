@@ -12,4 +12,10 @@
 
 require("lspconfig").elixirls.setup({
 	cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+	settings = {
+		elixirLS = {
+			dialyzerEnabled = true,
+			fetchDeps = false,
+		},
+	},
 })
