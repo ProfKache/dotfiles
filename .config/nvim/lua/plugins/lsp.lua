@@ -156,8 +156,6 @@ return {
 				},
 			},
 
-			elixirls = {},
-
 			ruff = {
 				settings = {
 					args = { "--fix" }, -- Optional: Customize CLI arguments (e.g., auto-fix issues)
