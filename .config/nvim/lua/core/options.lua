@@ -108,6 +108,7 @@ vim.cmd([[
 autocmd Filetype json let g:indentLine_setConceal = 0
 ]])
 
+-- Display diagnostics
 vim.diagnostic.config({
 	virtual_text = true, -- Enables inline text
 })
