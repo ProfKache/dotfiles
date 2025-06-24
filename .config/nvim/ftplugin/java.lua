@@ -174,45 +174,125 @@ end
 -- This starts a new client & server, or attaches to an existing client & server based on the `root_dir`.
 jdtls.start_or_attach(config)
 
--- local overseer = require("overseer")
---
--- -- Function to find the main class
--- local function find_main_class()
--- 	local handle = io.popen("grep -rl 'public static void main' src/main/java")
--- 	if not handle then
--- 		return nil
--- 	end
---
--- 	local result = handle:read("*a")
--- 	handle:close()
---
--- 	local path = result:match("[^\r\n]+")
--- 	if not path then
--- 		return nil
--- 	end
---
--- 	local class_path = path:gsub("^src/main/java/", ""):gsub("%.java$", "")
--- 	local main_class = class_path:gsub("/", ".")
--- 	return main_class
--- end
---
--- -- Keymap to run the main class via Maven using Overseer
--- vim.keymap.set("n", "<leader>r", function()
--- 	local main_class = find_main_class()
--- 	if not main_class then
--- 		vim.notify("❌ Could not find a Java main class.", vim.log.levels.ERROR)
--- 		return
--- 	end
---
--- 	overseer.run_template({
--- 		name = "Run Java Main Class",
--- 		cmd = { "mvn", "exec:java", "-Dexec.mainClass=" .. main_class },
--- 		components = {
--- 			"default",
--- 			"on_output_quickfix",
--- 			{ "on_complete_notify", statuses = { "FAILURE" } },
--- 		},
--- 		env = {},
--- 		cwd = vim.fn.getcwd(),
--- 	})
--- end, { desc = "Run Java (auto-detect main class)" })
+-- =================================================================================
+
+-- Custom commands to create Java Class, Package, Abstract Class, Interface, and Enums
+
+-- =================================================================================
+
+-- Helper: scan packages under src/main/java and return as dot-separated names
+local function complete_java_packages(arg_lead, _, _)
+	local results = {}
+	local base_path = "src/main/java/"
+
+	local scan = vim.loop.fs_scandir(base_path)
+	if not scan then
+		return results
+	end
+
+	local function scan_dir(path, prefix)
+		local fs = vim.loop.fs_scandir(path)
+		if not fs then
+			return
+		end
+		while true do
+			local name, type = vim.loop.fs_scandir_next(fs)
+			if not name then
+				break
+			end
+			if type == "directory" then
+				local new_prefix = prefix .. "." .. name
+				if new_prefix:sub(1, 1) == "." then
+					new_prefix = new_prefix:sub(2)
+				end
+				table.insert(results, new_prefix)
+				scan_dir(path .. "/" .. name, new_prefix)
+			end
+		end
+	end
+
+	scan_dir(base_path, "")
+	return vim.tbl_filter(function(item)
+		return vim.startswith(item, arg_lead)
+	end, results)
+end
+
+-- Create a Java class/interface/abstract/enum
+vim.api.nvim_create_user_command("CreateJavaClass", function(opts)
+	local args = vim.split(opts.args, " ")
+	if #args < 2 then
+		print("Usage: :CreateJavaClass <package.name> <ClassName> [class|interface|abstract|enum]")
+		return
+	end
+
+	local package = args[1]
+	local class_name = args[2]
+	local kind = args[3] or "class"
+
+	local valid_kinds = { class = true, interface = true, abstract = true, enum = true }
+	if not valid_kinds[kind] then
+		print("Invalid type. Use: class, interface, abstract, or enum")
+		return
+	end
+
+	local package_path = package:gsub("%.", "/")
+	local full_path = "src/main/java/" .. package_path
+	local full_file = full_path .. "/" .. class_name .. ".java"
+
+	vim.fn.mkdir(full_path, "p")
+
+	if vim.fn.filereadable(full_file) == 1 then
+		print("File already exists: " .. full_file)
+		return
+	end
+
+	local lines = { "package " .. package .. ";", "" }
+
+	if kind == "interface" then
+		table.insert(lines, "public interface " .. class_name .. " {")
+		table.insert(lines, "    // TODO: define methods")
+	elseif kind == "abstract" then
+		table.insert(lines, "public abstract class " .. class_name .. " {")
+		table.insert(lines, "    // TODO: implement")
+	elseif kind == "enum" then
+		table.insert(lines, "public enum " .. class_name .. " {")
+		table.insert(lines, "    VALUE1, VALUE2;")
+	else
+		table.insert(lines, "public class " .. class_name .. " {")
+		table.insert(lines, "    // TODO: implement")
+	end
+
+	table.insert(lines, "}")
+	vim.fn.writefile(lines, full_file)
+	-- print("Created Java " .. kind .. ": " .. full_file)
+	vim.notify("Created Java " .. kind .. ":\n" .. full_file, vim.log.levels.INFO, { title = "Java Class" })
+	vim.cmd("edit " .. full_file)
+end, {
+	nargs = "+",
+	complete = function(arg_lead)
+		return complete_java_packages(arg_lead)
+	end,
+	desc = "Create a new Java class/interface/abstract/enum in a package",
+})
+
+-- Create Java package
+vim.api.nvim_create_user_command("CreateJavaPackage", function(opts)
+	local package = opts.args
+	if package == nil or package == "" then
+		print("Usage: :CreateJavaPackage <package.name>")
+		return
+	end
+
+	local package_path = package:gsub("%.", "/")
+	local full_path = "src/main/java/" .. package_path
+
+	vim.fn.mkdir(full_path, "p")
+	-- print("Created package directory: " .. full_path)
+	vim.notify("Created package directory:\n" .. full_path, vim.log.levels.INFO, { title = "Java Package" })
+end, {
+	nargs = 1,
+	complete = function(arg_lead)
+		return complete_java_packages(arg_lead)
+	end,
+	desc = "Create a new Java package directory",
+})
