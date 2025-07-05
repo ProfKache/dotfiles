@@ -4,7 +4,8 @@ lspconfig.solargraph.setup({
 	mason = true, -- Let Mason handle it
 	cmd = { vim.fn.stdpath("data") .. "/mason/bin/solargraph", "stdio" },
 	root_dir = function(fname)
-		return require("lspconfig.util").find_git_ancestor(fname) or vim.fn.getcwd()
+		-- return require("lspconfig.util").find_git_ancestor(fname) or vim.fn.getcwd()
+		return vim.fs.dirname(vim.fs.find({ fname, ".git" }, { upward = true })[1]) or vim.fn.getcwd()
 	end,
 	settings = {
 		solargraph = {
