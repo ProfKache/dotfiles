@@ -38,7 +38,7 @@ return {
 			go = { "gofumpt" },
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
-			java = { "google-java-format" },
+			-- java = { "google-java-format" },
 			svelte = { "prettierd", "prettier" },
 			javascriptreact = { "prettierd" },
 			typescriptreact = { "prettierd" },
