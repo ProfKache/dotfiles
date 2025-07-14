@@ -255,6 +255,10 @@ abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela
 # set --export MVN_HOME "$HOME/sources/apache-maven-3.9.6"
 # set --export PATH $MVN_HOME/bin $PATH
 
+
+# Set path for roc language
+set -x PATH ~/sources/roc_nightly $PATH
+
 # Change the terminal prompt
 starship init fish | source
 
