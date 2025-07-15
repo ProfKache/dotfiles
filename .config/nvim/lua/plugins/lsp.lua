@@ -255,6 +255,8 @@ return {
 							url = "",
 						},
 						schemas = require("schemastore").yaml.schemas(),
+						validate = { enable = true },
+						format = { enable = true },
 					},
 				},
 			},
