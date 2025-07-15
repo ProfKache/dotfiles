@@ -84,7 +84,7 @@ au Bufread,BufNewFile,BufEnter *.{js,jsx,ts,tsx,php} set shiftwidth=2 tabstop=2 
 au Bufread,BufNewFile,BufEnter *.json set shiftwidth=2 tabstop=2 conceallevel=0
 au Bufread,BufNewFile,BufEnter *.c set shiftwidth=4 tabstop=4 noexpandtab cindent
 au Bufread,BufNewFile,BufEnter *.sql set shiftwidth=4 tabstop=4 noexpandtab
-au BufNewFile,BufRead *.{css,lua, yaml,vue} set ts=2 sw=2
+au BufNewFile,BufRead *.{css,lua,yaml,vue} set ts=2 sw=2
 au BufNewFile,BufRead *.scss set ft=scss.css
 au BufRead,BufNewFile *.sbt set filetype=scala
 
