@@ -259,6 +259,9 @@ abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela
 # Set path for roc language
 set -x PATH ~/sources/roc_nightly $PATH
 
+# Set path for exercism
+set -x PATH ~/sources/exercism $PATH
+
 # Change the terminal prompt
 starship init fish | source
 
