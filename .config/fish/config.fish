@@ -282,6 +282,9 @@ set --erase _asdf_shims
 # end ASDF configuration code
 
 
+ulimit -n 65535
+
+
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
