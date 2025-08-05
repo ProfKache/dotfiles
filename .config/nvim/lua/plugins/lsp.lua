@@ -129,6 +129,52 @@ return {
 		--  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
 		--  - settings (table): Override the default settings passed when initializing the server.
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+
+		-- require("lspconfig").pylsp.setup({
+		-- 	settings = {
+		-- 		pylsp = {
+		-- 			plugins = {
+		-- 				pycodestyle = { enabled = false },
+		-- 				pyflakes = { enabled = false },
+		-- 				pylint = { enabled = false },
+		-- 				mccabe = { enabled = false },
+		-- 				pydocstyle = { enabled = false },
+		-- 				rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+
+		require("lspconfig").lua_ls.setup({
+			settings = {
+				Lua = {
+					completion = {
+						callSnippet = "Replace",
+					},
+					diagnostics = {
+						globals = { "vim" }, -- Tells the server that `vim` is a global
+						disable = { "missing-fields" },
+					},
+				},
+			},
+		})
+
+		require("lspconfig").djlsp.setup({
+			cmd = { "~/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
+			init_options = {
+				django_settings_module = "config.settings", -- Replace with your Django settings module
+				docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
+				docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
+				-- djlsp = {
+				-- 	django_settings_module = "config.settings", -- Replace with your Django settings module
+				-- 	docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
+				-- 	docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
+				-- },
+			},
+			filetypes = { "htmldjango", "jinja" },
+			root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
+		})
+
 		local servers = {
 			-- clangd = {},
 			-- intelephense = {},
@@ -167,37 +213,7 @@ return {
 				},
 			},
 
-			require("lspconfig").djlsp.setup({
-				cmd = { "~/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
-				init_options = {
-					django_settings_module = "config.settings", -- Replace with your Django settings module
-					docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
-					docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
-					-- djlsp = {
-					-- 	django_settings_module = "config.settings", -- Replace with your Django settings module
-					-- 	docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
-					-- 	docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
-					-- },
-				},
-				filetypes = { "htmldjango", "jinja" },
-				root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
-			}),
-
-			require("lspconfig").lua_ls.setup({
-				settings = {
-					Lua = {
-						completion = {
-							callSnippet = "Replace",
-						},
-						diagnostics = {
-							globals = { "vim" }, -- Tells the server that `vim` is a global
-							disable = { "missing-fields" },
-						},
-					},
-				},
-			}),
-
-			-- pylsp = {
+			-- require("lspconfig").pylsp.setup({
 			-- 	settings = {
 			-- 		pylsp = {
 			-- 			plugins = {
@@ -206,30 +222,11 @@ return {
 			-- 				pylint = { enabled = false },
 			-- 				mccabe = { enabled = false },
 			-- 				pydocstyle = { enabled = false },
-			-- 				flake8 = { enabled = false },
-			-- 				ruff = { enabled = false }, -- only needed if using Ruff via pylsp
-			-- 				yapf = { enabled = false },
-			-- 				autopep8 = { enabled = false },
 			-- 				rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
 			-- 			},
 			-- 		},
 			-- 	},
-			-- },
-
-			require("lspconfig").pylsp.setup({
-				settings = {
-					pylsp = {
-						plugins = {
-							pycodestyle = { enabled = false },
-							pyflakes = { enabled = false },
-							pylint = { enabled = false },
-							mccabe = { enabled = false },
-							pydocstyle = { enabled = false },
-							rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
-						},
-					},
-				},
-			}),
+			-- }),
 
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -308,6 +305,20 @@ return {
 					"typescript",
 					"javascriptreact",
 					"typescriptreact",
+				},
+			},
+			pylsp = {
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = { enabled = false },
+							pyflakes = { enabled = false },
+							pylint = { enabled = false },
+							mccabe = { enabled = false },
+							pydocstyle = { enabled = false },
+							rope_autoimport = { enabled = true },
+						},
+					},
 				},
 			},
 		}
