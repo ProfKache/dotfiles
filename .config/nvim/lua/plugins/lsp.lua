@@ -160,7 +160,7 @@ return {
 		})
 
 		require("lspconfig").djlsp.setup({
-			cmd = { "~/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
+			cmd = { vim.env.HOME .. "/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
 			init_options = {
 				django_settings_module = "config.settings", -- Replace with your Django settings module
 				docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
