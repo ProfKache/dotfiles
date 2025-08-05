@@ -165,11 +165,6 @@ return {
 				django_settings_module = "config.settings", -- Replace with your Django settings module
 				docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
 				docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
-				-- djlsp = {
-				-- 	django_settings_module = "config.settings", -- Replace with your Django settings module
-				-- 	docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
-				-- 	docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
-				-- },
 			},
 			filetypes = { "htmldjango", "jinja" },
 			root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
