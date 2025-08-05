@@ -58,6 +58,7 @@ return {
 			scss = { "prettierd" },
 			ruby = { "solargraph" },
 			erb = { "erb-formatter" },
+			xml = { "xmlformatter" },
 		},
 		-- formatters = {
 		-- 	djlint = {
