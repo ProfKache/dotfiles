@@ -10,6 +10,11 @@ return {
 		require("dbee").install()
 	end,
 	config = function()
-		require("dbee").setup(--[[optional config]])
+		require("dbee").setup({
+			keys = {
+				{ key = "c", mode = "n", action = "collapse" },
+				{ key = "e", mode = "n", action = "expand" },
+			},
+		})
 	end,
 }
