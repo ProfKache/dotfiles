@@ -18,7 +18,7 @@ y = 0
 TERM = "xterm-256color"
 
 [font]
-size = 16.9
+size = 18
 
 [font.normal]
 family = "CaskaydiaCove NF"
