@@ -281,6 +281,17 @@ set --erase _asdf_shims
 
 # end ASDF configuration code
 
+# Activate Virtual environment with pdm
+function pdm
+  set cmd $argv[1]
+
+  if test "$cmd" = "shell"
+      eval (pdm venv activate)
+  else
+      command pdm $argv
+  end
+end
+
 
 ulimit -n 65535
 
