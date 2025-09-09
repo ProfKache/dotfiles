@@ -281,7 +281,7 @@ set --erase _asdf_shims
 
 # end ASDF configuration code
 
-# Activate Virtual environment with pdm
+# Activate Virtual environment with pdm by typing 'pdm shell'
 function pdm
   set cmd $argv[1]
 
