@@ -1,6 +1,4 @@
-local lspconfig = require("lspconfig")
-
-lspconfig.solargraph.setup({
+vim.lsp.config("solargraph", {
 	mason = true, -- Let Mason handle it
 	cmd = { vim.fn.stdpath("data") .. "/mason/bin/solargraph", "stdio" },
 	root_dir = function(fname)
