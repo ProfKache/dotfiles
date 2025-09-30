@@ -130,22 +130,7 @@ return {
 		--  - settings (table): Override the default settings passed when initializing the server.
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
-		-- require("lspconfig").pylsp.setup({
-		-- 	settings = {
-		-- 		pylsp = {
-		-- 			plugins = {
-		-- 				pycodestyle = { enabled = false },
-		-- 				pyflakes = { enabled = false },
-		-- 				pylint = { enabled = false },
-		-- 				mccabe = { enabled = false },
-		-- 				pydocstyle = { enabled = false },
-		-- 				rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
-		-- 			},
-		-- 		},
-		-- 	},
-		-- })
-
-		require("lspconfig").lua_ls.setup({
+		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
 					completion = {
@@ -159,7 +144,7 @@ return {
 			},
 		})
 
-		require("lspconfig").djlsp.setup({
+		vim.lsp.config("djlsp", {
 			cmd = { vim.env.HOME .. "/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
 			init_options = {
 				django_settings_module = "config.settings", -- Replace with your Django settings module
@@ -207,21 +192,6 @@ return {
 					},
 				},
 			},
-
-			-- require("lspconfig").pylsp.setup({
-			-- 	settings = {
-			-- 		pylsp = {
-			-- 			plugins = {
-			-- 				pycodestyle = { enabled = false },
-			-- 				pyflakes = { enabled = false },
-			-- 				pylint = { enabled = false },
-			-- 				mccabe = { enabled = false },
-			-- 				pydocstyle = { enabled = false },
-			-- 				rope_autoimport = { enabled = true }, -- Enable autocompletion plugin
-			-- 			},
-			-- 		},
-			-- 	},
-			-- }),
 
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
