@@ -158,6 +158,7 @@ return {
 		local servers = {
 			-- clangd = {},
 			-- intelephense = {},
+			cssls = {},
 			phpactor = {
 				settings = {
 					init_options = {
