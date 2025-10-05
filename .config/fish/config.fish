@@ -63,8 +63,11 @@ set PATH /opt/temporal $PATH
 
 # ASDF Setup *** New ***  
 # set -x PATH ~/.asdf/bin $PATH
-set -x PATH ~/go/bin $PATH
+# set -x PATH ~/go/bin $PATH
 set -x PATH ~/bin $PATH  # Adding the version for asdf
+
+# Set path for node
+set -x PATH ~/.asdf/installs/nodejs/*/bin $PATH
 
 # Set path for elixir shell history
 set -x ERL_AFLAGS "-kernel shell_history enabled"
