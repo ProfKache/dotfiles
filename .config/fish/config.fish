@@ -11,6 +11,9 @@ set -g fish_key_bindings fish_vi_key_bindings
 alias tconf="nvim ~/.tmux.conf"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# eval (tmuxifier init - fish)
+set -gx PATH "~/.tmuxifier/bin" $PATH
+
 alias md="mkdir -p"
 
 
@@ -71,6 +74,9 @@ set -x PATH ~/.asdf/installs/nodejs/*/bin $PATH
 
 # Set path for elixir shell history
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+
+# Set path for mix
+set -Ux PATH $HOME/.asdf/installs/elixir/1.18.3-otp-27/.mix/escripts $PATH
 
 # Set path for python packages installed via pip through asdf
 set PATH ~/.asdf/installs/python/*/bin $PATH
