@@ -10,12 +10,11 @@ IEx.configure(
     eval_error: [:red, :bright]
   ],
   default_prompt:
-    "#{IO.ANSI.color(5, 1, 0)}λ #{IO.ANSI.reset()}" <>
+    "#{IO.ANSI.color(208)}λ #{IO.ANSI.reset()}" <>
       "#{IO.ANSI.green()}(#{IO.ANSI.green()}%counter#{IO.ANSI.reset()}" <>
-      "#{IO.ANSI.green()})#{IO.ANSI.color(5, 1, 0)}>",
+      "#{IO.ANSI.green()})#{IO.ANSI.color(208)}>#{IO.ANSI.reset()}",
   alive_prompt:
     "#{IO.ANSI.green()}λ#{IO.ANSI.reset()}" <>
       "(#{IO.ANSI.cyan()}%node#{IO.ANSI.reset()}) " <>
       "(#{IO.ANSI.cyan()}%counter#{IO.ANSI.reset()}) >"
 )
-
