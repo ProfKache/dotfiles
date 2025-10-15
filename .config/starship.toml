@@ -1,3 +1,5 @@
+command_timeout = 5000
+
 [nodejs]
 format = "via [$symbol($version )]($style)"
 symbol = ' '
