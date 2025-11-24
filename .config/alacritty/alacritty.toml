@@ -1,7 +1,6 @@
 [general]
 import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
 
-
 [window]
 decorations = "none"
 opacity = 1
@@ -18,14 +17,16 @@ y = 0
 TERM = "xterm-256color"
 
 [font]
-size = 18
+size = 17
 
 [font.normal]
 family = "CaskaydiaCove NF"
-style = "Light"
+# family = "FiraCode Nerd Font Mono"
+style = "Regular"
 
 [font.bold]
 family = "CaskaydiaCove NF"
+# family = "FiraCode Nerd Font Mono"
 style = "SemiBold"
 
 [font.italic]
