@@ -16,6 +16,8 @@ set -gx PATH "~/.tmuxifier/bin" $PATH
 
 alias md="mkdir -p"
 
+# alias for Yazi i.e terminal file manager
+alias yazi="flatpak run io.github.sxyazi.yazi"
 
 # django specific aliases
 alias rs="python manage.py runserver"
