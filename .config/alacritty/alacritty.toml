@@ -17,7 +17,7 @@ y = 0
 TERM = "xterm-256color"
 
 [font]
-size = 17
+size = 16
 
 [font.normal]
 family = "IoskeleyMono Nerd Font"
@@ -25,7 +25,7 @@ family = "IoskeleyMono Nerd Font"
 # family = "Operator Mono SSm Lig"
 # family = "CaskaydiaCove NF"
 # family = "FiraCode Nerd Font Mono"
-style = "Regular"
+style = "Light"
 
 [font.bold]
 family = "IoskeleyMono Nerd Font"
