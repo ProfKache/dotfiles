@@ -20,21 +20,30 @@ TERM = "xterm-256color"
 size = 17
 
 [font.normal]
-family = "CaskaydiaCove NF"
+family = "IoskeleyMono Nerd Font"
+# family = "0xProto Nerd Font"
+# family = "Operator Mono SSm Lig"
+# family = "CaskaydiaCove NF"
 # family = "FiraCode Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "CaskaydiaCove NF"
+family = "IoskeleyMono Nerd Font"
+# family = "0xProto Nerd Font"
+# family = "CaskaydiaCove NF"
 # family = "FiraCode Nerd Font Mono"
-style = "SemiBold"
+style = "Bold"
 
 [font.italic]
-family = "CaskaydiaCove NF"
-style = "ExtraLight Italic"
+family = "IoskeleyMono Nerd Font"
+# family = "0xProto Nerd Font"
+# family = "CaskaydiaCove NF"
+style = "Light Italic"
 
 [font.bold_italic]
-family = "CaskaydiaCove NF"
+family = "IoskeleyMono Nerd Font"
+# family = "0xProto Nerd Font"
+# family = "CaskaydiaCove NF"
 style = "Bold Italic"
 
 [font.offset]
