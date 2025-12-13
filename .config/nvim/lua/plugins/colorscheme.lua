@@ -25,9 +25,9 @@ return {
 				styles = {
 					comments = { "italic" },
 					keywords = { "bold" },
-					functions = { "italic" },
-					conditionals = { "italic" },
-					loops = { "italic" },
+					functions = {},
+					conditionals = {},
+					loops = {},
 					strings = {},
 					variables = {},
 					numbers = {},
