@@ -32,7 +32,7 @@ map("n", "<leader>1", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>2", ":TSJToggle<CR>", opts)
 
 -- Opening new tabs should be easier with ,t
-map("n", "<leader>t", ":tabe<CR>", opts)
+map("n", "<leader>nt", ":tabe<CR>", opts)
 
 -- Entering command mode with just a space
 -- nmap <space> :
