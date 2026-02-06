@@ -35,6 +35,8 @@ alias mysql="mysql -u root -p"  # for linux
 alias mycli="mycli mysql://root@localhost:3306/mysql"
 # alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
 
+# alias for axel to choose the best connection
+axel = "bash ~/workspace/Automation_Scripts/axel-smart.sh"
 
 # OpenHIM console
 # alias openhim-console="cd /var/www/html/openhim-console-1.15.0 && ns"
@@ -160,7 +162,7 @@ abbr gcc 'gcc -Wall -pedantic -Wextra'
 
 abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
 # abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
-abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela-client-config.ovpn"
+abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela1-client-config.ovpn"
 
 
 # Set path for roc language
@@ -168,6 +170,9 @@ set -x PATH ~/sources/roc_nightly $PATH
 
 # Set path for exercism
 set -x PATH ~/sources/exercism $PATH
+
+# Set path for kerl
+# set -Ux KERL_CONFIGURE_OPTIONS "--without-wx"
 
 # Change the terminal prompt
 starship init fish | source
