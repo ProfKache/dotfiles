@@ -36,7 +36,8 @@ alias mycli="mycli mysql://root@localhost:3306/mysql"
 # alias mysqladmin="/usr/local/mysql/bin/mysqladmin"   # for mac os
 
 # alias for axel to choose the best connection
-# axel = "bash ~/workspace/Automation_Scripts/axel-smart.sh"
+# alias axels="axel-smart"
+# alias axel-new="bash ~/workspace/Automation_Scripts/axel-smart.sh"
 
 # OpenHIM console
 # alias openhim-console="cd /var/www/html/openhim-console-1.15.0 && ns"
