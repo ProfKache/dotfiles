@@ -38,6 +38,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 set.clipboard = "unnamed,unnamedplus" -- Enable access to system clipboard
 
+-- Disable undo persistence (or set a limit)
+set.undofile = false
+
+-- Keep only recent undo history
+set.undolevels = 1000
 --------------------------------------------
 -- SEARCH CONFIGURATION
 --------------------------------------------
@@ -110,3 +115,12 @@ autocmd Filetype json let g:indentLine_setConceal = 0
 vim.diagnostic.config({
 	virtual_text = true, -- Enables inline text
 })
+
+-- Limit log file size to prevent runaway growth
+local log_path = vim.fn.stdpath("state") .. "/log"
+if vim.fn.filereadable(log_path) == 1 then
+	local size = vim.fn.getfsize(log_path)
+	if size > 100 * 1024 * 1024 then -- 100MB limit
+		vim.fn.delete(log_path)
+	end
+end
