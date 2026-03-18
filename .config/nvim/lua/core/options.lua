@@ -124,3 +124,6 @@ if vim.fn.filereadable(log_path) == 1 then
 		vim.fn.delete(log_path)
 	end
 end
+
+-- Disable debug logging in dev build
+vim.lsp.log.set_level("off")
