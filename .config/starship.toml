@@ -47,6 +47,14 @@ format = 'via [🔰$version](bold red) '
 format = "via [$symbol($version )]($style)"
 symbol = " "
 
+[cmake]
+format = "via [$symbol($version )]($style)"
+symbol = "△ "
+
+[zig]
+format = "via [$symbol($version )]($style)"
+
+
 # [sudo]
 # style = 'bold green'
 # symbol = '🤵 '
