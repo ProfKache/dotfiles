@@ -52,6 +52,9 @@ alias nifi="bash /opt/nifi/bin/nifi.sh"
 # Setting GOLANG Path
 set PATH /usr/local/go/bin $PATH
 
+# Setting PATH for zig
+set PATH $HOME/sources/zig-x86_64-linux-0.15.2 $PATH
+
 #set PATH $HOME/Android/Sdk $PATH
 
 # set path for cargo
