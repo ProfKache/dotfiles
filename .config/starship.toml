@@ -53,6 +53,7 @@ symbol = "△ "
 
 [zig]
 format = "via [$symbol($version )]($style)"
+# symbol = '⚡️'
 
 
 # [sudo]
