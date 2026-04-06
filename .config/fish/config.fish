@@ -63,6 +63,9 @@ set PATH ~/.cargo/bin $PATH
 # set path for pipenv and pipenv-resolver, pdm etc.
 set PATH ~/.local/bin $PATH
 
+# set path for omf
+# set -gx PATH ~/.local/share/omf/bin $PATH
+
 # set path for flyctl
 set PATH ~/.fly/bin $PATH
 
@@ -84,7 +87,7 @@ set -x PATH ~/.asdf/installs/nodejs/*/bin $PATH
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 
 # Set path for mix
-set -Ux PATH $HOME/.asdf/installs/elixir/1.18.3-otp-27/.mix/escripts $PATH
+# set -Ux PATH $HOME/.asdf/installs/elixir/1.18.3-otp-27/.mix/escripts $PATH
 
 # Set path for python packages installed via pip through asdf
 set PATH ~/.asdf/installs/python/*/bin $PATH
@@ -92,6 +95,16 @@ set PATH ~/.asdf/installs/python/*/bin $PATH
 
 set fish_greeting # Turns off the intro fish message when pulling up fish shell
 set -gx EDITOR nvim # Sets $EDITOR to nvim (neovim)
+
+####################################################################
+# Set configuration for Claude Code CLI
+####################################################################
+
+# Setting configuration with Ollama
+set -gx ANTHROPIC_BASE_URL "http://localhost:11434"
+
+# Set API Key for Claude code
+set -gx ANTHROPIC_AUTH_TOKEN "ollama"
 
 ## Android for linux
 # set --export ANDROID_HOME $HOME/Android/Sdk
@@ -215,3 +228,6 @@ ulimit -n 65535
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# opencode
+fish_add_path /home/profkache/.opencode/bin
