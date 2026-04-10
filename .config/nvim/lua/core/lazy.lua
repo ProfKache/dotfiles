@@ -15,6 +15,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("lazy").setup("plugins", {
+	rocks = {
+		enabled = false, -- 🔥 disable lazy-rocks completely
+	},
 	change_detection = {
 		enabled = true,
 		notify = false,
