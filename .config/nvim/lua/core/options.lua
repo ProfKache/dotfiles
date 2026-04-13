@@ -116,14 +116,5 @@ vim.diagnostic.config({
 	virtual_text = true, -- Enables inline text
 })
 
--- Limit log file size to prevent runaway growth
-local log_path = vim.fn.stdpath("state") .. "/log"
-if vim.fn.filereadable(log_path) == 1 then
-	local size = vim.fn.getfsize(log_path)
-	if size > 100 * 1024 * 1024 then -- 100MB limit
-		vim.fn.delete(log_path)
-	end
-end
-
 -- Disable debug logging in dev build
 vim.lsp.log.set_level("off")
