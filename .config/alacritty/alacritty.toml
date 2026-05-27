@@ -17,11 +17,12 @@ y = 0
 TERM = "xterm-256color"
 
 [font]
-size = 18
+size = 16
 
 [font.normal]
-family = "AdwaitaMono Nerd Font"
-#family = "IoskeleyMono Nerd Font"
+family = "Hack Nerd Font"
+# family = "AdwaitaMono Nerd Font"
+# family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
 # family = "Operator Mono SSm Lig"
 # family = "CaskaydiaCove NF"
@@ -29,7 +30,8 @@ family = "AdwaitaMono Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "AdwaitaMono Nerd Font"
+family = "Hack Nerd Font"
+# family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
 # family = "CaskaydiaCove NF"
@@ -37,7 +39,8 @@ family = "AdwaitaMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "AdwaitaMono Nerd Font"
+family = "Hack Nerd Font"
+# family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
 # family = "CaskaydiaCove NF"
@@ -45,7 +48,8 @@ family = "AdwaitaMono Nerd Font"
 style = "Italic"
 
 [font.bold_italic]
-family = "AdwaitaMono Nerd Font"
+family = "Hack Nerd Font"
+# family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
 # family = "CaskaydiaCove NF"
