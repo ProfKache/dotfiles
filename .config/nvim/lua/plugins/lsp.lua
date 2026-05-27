@@ -144,21 +144,30 @@ return {
 			},
 		})
 
-		vim.lsp.config("djlsp", {
-			cmd = { vim.env.HOME .. "/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
-			init_options = {
-				django_settings_module = "config.settings", -- Replace with your Django settings module
-				docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
-				docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
-			},
-			filetypes = { "htmldjango", "jinja" },
-			root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
+		-- vim.lsp.config("djlsp", {
+		-- 	cmd = { vim.env.HOME .. "/.local/share/nvim/mason/packages/django-template-lsp/venv/bin/djlsp" }, -- Replace this with the path to your djlsp executable
+		-- 	init_options = {
+		-- 		django_settings_module = "config.settings", -- Replace with your Django settings module
+		-- 		docker_compose_file = "docker-compose.yaml", -- Optional: Path to your Docker Compose file
+		-- 		docker_compose_service = "django", -- Optional: Service name in your Docker Compose file
+		-- 	},
+		-- 	filetypes = { "htmldjango", "jinja" },
+		-- 	root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
+		-- })
+		-- In init.lua
+		vim.lsp.config("djls", {
+			cmd = { "djls", "serve" },
+			filetypes = { "htmldjango", "html" },
+			root_markers = { "manage.py", "pyproject.toml", ".git" },
 		})
+
+		vim.lsp.enable("djls")
 
 		local servers = {
 			-- clangd = {},
 			-- intelephense = {},
 			cssls = {},
+			-- djlsp = {},
 			phpactor = {
 				settings = {
 					init_options = {
