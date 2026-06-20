@@ -78,7 +78,10 @@ set PATH /opt/temporal $PATH
 # ASDF Setup *** New ***  
 # set -x PATH ~/.asdf/bin $PATH
 # set -x PATH ~/go/bin $PATH
-set -x PATH ~/bin $PATH  # Adding the version for asdf
+# set -x PATH ~/bin $PATH  # Adding the version for asdf
+
+# Set path for go
+fish_add_path $HOME/go/bin
 
 # Set path for node
 set -x PATH ~/.asdf/installs/nodejs/*/bin $PATH
@@ -219,6 +222,12 @@ function pdm
   else
       command pdm $argv
   end
+end
+
+# Update asdf to the latest version
+function update-asdf
+    go install github.com/asdf-vm/asdf/cmd/asdf@latest
+    and asdf version
 end
 
 
