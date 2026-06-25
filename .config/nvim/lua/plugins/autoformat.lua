@@ -43,6 +43,7 @@ return {
 			javascriptreact = { "prettierd" },
 			typescriptreact = { "prettierd" },
 			json = { "prettierd" },
+			jsonc = { "prettierd" },
 			graphql = { "prettierd" },
 			-- kotlin = { "ktlint" },
 			-- ruby = { "standardrb" },

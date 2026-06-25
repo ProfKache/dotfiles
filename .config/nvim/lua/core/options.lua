@@ -86,7 +86,7 @@ xnoremap J :move '>+1<CR>gv-gv
 vim.cmd([[
 au Bufread,BufNewFile,BufEnter *.{html,htmldjango} set shiftwidth=2 tabstop=2 noexpandtab
 au Bufread,BufNewFile,BufEnter *.{js,jsx,ts,tsx,php} set shiftwidth=2 tabstop=2 noexpandtab cindent
-au Bufread,BufNewFile,BufEnter *.json set shiftwidth=2 tabstop=2 conceallevel=0
+au Bufread,BufNewFile,BufEnter *.{json,jsonc} set shiftwidth=2 tabstop=2 conceallevel=0
 au Bufread,BufNewFile,BufEnter *.c set shiftwidth=4 tabstop=4 noexpandtab cindent
 au Bufread,BufNewFile,BufEnter *.sql set shiftwidth=4 tabstop=4 noexpandtab
 au BufNewFile,BufRead *.{css,lua,yaml,vue} set ts=2 sw=2
