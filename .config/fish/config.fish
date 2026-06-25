@@ -49,7 +49,7 @@ alias mycli="mycli mysql://root@localhost:3306/mysql"
 alias nifi="bash /opt/nifi/bin/nifi.sh"
 
 
-# Setting GOLANG Path
+# Setting Golang Path
 set PATH /usr/local/go/bin $PATH
 
 # Setting PATH for zig
@@ -81,7 +81,7 @@ set PATH /opt/temporal $PATH
 # set -x PATH ~/bin $PATH  # Adding the version for asdf
 
 # Set path for go
-fish_add_path $HOME/go/bin
+# fish_add_path $HOME/go/bin
 
 # Set path for node
 set -x PATH ~/.asdf/installs/nodejs/*/bin $PATH
