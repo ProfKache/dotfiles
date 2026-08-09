@@ -21,7 +21,7 @@ local config = {
 	-- The command that starts the language server
 	-- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
 	cmd = {
-		"java",
+		vim.env.HOME .. "/.asdf/installs/java/openjdk-21.0.2/bin/java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -53,8 +53,8 @@ local config = {
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	settings = {
 		java = {
-			-- TODO Replace this with the absolute path to your main java version (JDK 17 or higher)
-			home = vim.env.HOME .. "/.asdf/installs/java/openjdk-17.0.2",
+			-- TODO Replace this with the absolute path to your main java version (JDK 21 or higher)
+			home = vim.env.HOME .. "/.asdf/installs/java/openjdk-21.0.2",
 			eclipse = {
 				downloadSources = true,
 			},
@@ -176,7 +176,7 @@ jdtls.start_or_attach(config)
 
 -- =================================================================================
 
--- Custom commands to create Java Class, Package, Abstract Class, Interface, and Enums
+-- Custom commands to create Java Class, Package, Abstract Class, Interface, Enums, Record, Annotation, and Exception
 
 -- =================================================================================
 
@@ -217,11 +217,13 @@ local function complete_java_packages(arg_lead, _, _)
 	end, results)
 end
 
--- Create a Java class/interface/abstract/enum
+-- Create a Java class/interface/abstract/enum/record/annotation/exception
 vim.api.nvim_create_user_command("CreateJavaClass", function(opts)
 	local args = vim.split(opts.args, " ")
 	if #args < 2 then
-		print("Usage: :CreateJavaClass <package.name> <ClassName> [class|interface|abstract|enum]")
+		print(
+			"Usage: :CreateJavaClass <package.name> <ClassName> [class|interface|abstract|enum|record|annotation|exception]"
+		)
 		return
 	end
 
@@ -229,9 +231,17 @@ vim.api.nvim_create_user_command("CreateJavaClass", function(opts)
 	local class_name = args[2]
 	local kind = args[3] or "class"
 
-	local valid_kinds = { class = true, interface = true, abstract = true, enum = true }
+	local valid_kinds = {
+		class = true,
+		interface = true,
+		abstract = true,
+		enum = true,
+		record = true,
+		annotation = true,
+		exception = true,
+	}
 	if not valid_kinds[kind] then
-		print("Invalid type. Use: class, interface, abstract, or enum")
+		print("Invalid type. Use: class, interface, abstract,  enum, record, annotation, or exception")
 		return
 	end
 
@@ -250,16 +260,46 @@ vim.api.nvim_create_user_command("CreateJavaClass", function(opts)
 
 	if kind == "interface" then
 		table.insert(lines, "public interface " .. class_name .. " {")
+		table.insert(lines, "")
 		table.insert(lines, "    // TODO: define methods")
+		table.insert(lines, "")
 	elseif kind == "abstract" then
 		table.insert(lines, "public abstract class " .. class_name .. " {")
+		table.insert(lines, "")
 		table.insert(lines, "    // TODO: implement")
+		table.insert(lines, "")
 	elseif kind == "enum" then
 		table.insert(lines, "public enum " .. class_name .. " {")
 		table.insert(lines, "    VALUE1, VALUE2;")
+	elseif kind == "record" then
+		table.insert(lines, "public record " .. class_name .. "() {")
+		table.insert(lines, "")
+		table.insert(lines, "    // TODO: implement")
+		table.insert(lines, "")
+	elseif kind == "annotation" then
+		table.insert(lines, "public @interface " .. class_name .. " {")
+		table.insert(lines, "")
+		table.insert(lines, "    // TODO: implement")
+		table.insert(lines, "")
+	elseif kind == "exception" then
+		table.insert(lines, "public class " .. class_name .. " extends RuntimeException {")
+		table.insert(lines, "")
+		table.insert(lines, "    // TODO: implement")
+		table.insert(lines, "")
+		-- table.insert(lines, "")
+		-- table.insert(lines, "    public " .. class_name .. "() {")
+		-- table.insert(lines, "        super();")
+		-- table.insert(lines, "    }")
+		-- table.insert(lines, "")
+		-- table.insert(lines, "    public " .. class_name .. "(String message) {")
+		-- table.insert(lines, "        super(message);")
+		-- table.insert(lines, "    }")
+		-- table.insert(lines, "")
 	else
 		table.insert(lines, "public class " .. class_name .. " {")
+		table.insert(lines, "")
 		table.insert(lines, "    // TODO: implement")
+		table.insert(lines, "")
 	end
 
 	table.insert(lines, "}")
@@ -272,7 +312,7 @@ end, {
 	complete = function(arg_lead)
 		return complete_java_packages(arg_lead)
 	end,
-	desc = "Create a new Java class/interface/abstract/enum in a package",
+	desc = "Create a new Java class/interface/abstract/enum/record/annotation/exception in a package",
 })
 
 -- Create Java package
