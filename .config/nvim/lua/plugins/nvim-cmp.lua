@@ -42,9 +42,9 @@ return {
 		local lspkind = require("lspkind")
 		luasnip.config.setup({})
 
-		cmp.config.formatting = {
-			format = require("tailwindcss-colorizer-cmp").formatter,
-		}
+		-- cmp.config.formatting = {
+		-- 	format = require("tailwindcss-colorizer-cmp").formatter,
+		-- }
 
 		cmp.setup({
 			snippet = {
@@ -52,87 +52,51 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-			completion = { completeopt = "menu,menuone,noinsert" },
 
-			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
+			completion = {
+				completeopt = "menu,menuone,noinsert",
 			},
 
-			-- For an understanding of why these mappings were
-			-- chosen, you will need to read `:help ins-completion`
-			--
-			-- No, but seriously. Please read `:help ins-completion`, it is really good!
+			window = {
+				completion = {
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+					scrollbar = false,
+				},
+
+				documentation = {
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,Search:None",
+				},
+			},
+
 			mapping = cmp.mapping.preset.insert({
-				-- Select the [n]ext item
-				["<C-n>"] = cmp.mapping.select_next_item(),
-				-- Select the [p]revious item
-				["<C-p>"] = cmp.mapping.select_prev_item(),
-
-				-- Scroll the documentation window [b]ack / [f]orward
-				["<C-b>"] = cmp.mapping.scroll_docs(-4),
-				["<C-f>"] = cmp.mapping.scroll_docs(4),
-
-				-- Accept ([y]es) the completion.
-				--  This will auto-import if your LSP supports it.
-				--  This will expand snippets if the LSP sent a snippet.
-				["<C-y>"] = cmp.mapping.confirm({ select = true }),
-
-				-- If you prefer more traditional completion keymaps,
-				-- you can uncomment the following lines
-				--['<CR>'] = cmp.mapping.confirm { select = true },
-				--['<Tab>'] = cmp.mapping.select_next_item(),
-				--['<S-Tab>'] = cmp.mapping.select_prev_item(),
-
-				-- Manually trigger a completion from nvim-cmp.
-				--  Generally you don't need this, because nvim-cmp will display
-				--  completions whenever it has completion options available.
-				["<C-Space>"] = cmp.mapping.complete({}),
-
-				-- Think of <c-l> as moving to the right of your snippet expansion.
-				--  So if you have a snippet that's like:
-				--  function $name($args)
-				--    $body
-				--  end
-				--
-				-- <c-l> will move you to the right of each of the expansion locations.
-				-- <c-h> is similar, except moving you backwards.
-				["<C-l>"] = cmp.mapping(function()
-					if luasnip.expand_or_locally_jumpable() then
-						luasnip.expand_or_jump()
-					end
-				end, { "i", "s" }),
-				["<C-h>"] = cmp.mapping(function()
-					if luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
-					end
-				end, { "i", "s" }),
-
-				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+				-- your mappings...
 			}),
+
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
 			},
-			-- enable icons beside functions and variables
+
 			formatting = {
 				expandable_indicator = true,
 				fields = { "kind", "abbr", "menu" },
-				format = lspkind.cmp_format({
-					mode = "symbol", -- show only symbol annotations ('text'|'text_symbol'|'symbol_text', 'symbol')
-					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-					show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 
-					-- The function below will be called before any actual modifications from lspkind
-					-- so that you can provide more controls on popup customization.
-					before = function(entry, vim_item)
-						-- Customize vim_item here if needed
-						return vim_item
-					end,
-				}),
+				format = function(entry, vim_item)
+					local kind = vim_item.kind
+
+					-- Add lspkind icon
+					local icon = lspkind.symbol_map[kind] or ""
+
+					vim_item.kind = icon .. " " .. kind
+
+					-- Tailwind colors
+					vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+
+					return vim_item
+				end,
 			},
 		})
 	end,
