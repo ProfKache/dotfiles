@@ -49,6 +49,9 @@ alias mycli="mycli mysql://root@localhost:3306/mysql"
 alias nifi="bash /opt/nifi/bin/nifi.sh"
 
 
+# Java New CLI project
+alias java-new="cp -r ~/Templates/java-cli-template"
+
 # Setting Golang Path
 set PATH /usr/local/go/bin $PATH
 
