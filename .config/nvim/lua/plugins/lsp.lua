@@ -219,19 +219,19 @@ return {
 				},
 			},
 
-			yamlls = {
-				settings = {
-					yaml = {
-						schemaStore = {
-							enable = false,
-							url = "",
-						},
-						schemas = require("schemastore").yaml.schemas(),
-						validate = { enable = true },
-						format = { enable = true },
-					},
-				},
-			},
+			-- yamlls = {
+			-- 	settings = {
+			-- 		yaml = {
+			-- 			schemaStore = {
+			-- 				enable = false,
+			-- 				url = "",
+			-- 			},
+			-- 			schemas = require("schemastore").yaml.schemas(),
+			-- 			validate = { enable = true },
+			-- 			format = { enable = true },
+			-- 		},
+			-- 	},
+			-- },
 
 			ts_ls = {
 				settings = {
