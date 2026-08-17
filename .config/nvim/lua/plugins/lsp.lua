@@ -154,14 +154,15 @@ return {
 		-- 	filetypes = { "htmldjango", "jinja" },
 		-- 	root_dir = require("lspconfig.util").root_pattern("manage.py", "pyproject.toml", ".git"),
 		-- })
-		-- In init.lua
-		vim.lsp.config("djls", {
-			cmd = { "djls", "serve" },
-			filetypes = { "htmldjango", "html" },
-			root_markers = { "manage.py", "pyproject.toml", ".git" },
-		})
 
-		vim.lsp.enable("djls")
+		-- In init.lua
+		-- vim.lsp.config("djls", {
+		-- 	cmd = { "djls", "serve" },
+		-- 	filetypes = { "htmldjango", "html" },
+		-- 	root_markers = { "manage.py", "pyproject.toml", ".git" },
+		-- })
+		--
+		-- vim.lsp.enable("djls")
 
 		local servers = {
 			-- clangd = {},
@@ -311,8 +312,6 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
-			"jsonls",
-			"ruff",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
