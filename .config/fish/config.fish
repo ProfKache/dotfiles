@@ -14,6 +14,9 @@ alias tconf="nvim ~/.tmux.conf"
 # eval (tmuxifier init - fish)
 set -gx PATH "~/.tmuxifier/bin" $PATH
 
+# Add Wezterm to PATH
+# fish_add_path -a "/usr/bin/wezterm"
+
 alias md="mkdir -p"
 
 # alias for Yazi i.e terminal file manager
