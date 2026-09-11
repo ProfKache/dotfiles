@@ -17,42 +17,41 @@ y = 0
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 19
 
 [font.normal]
-family = "Hack Nerd Font"
+# family = "Hack Nerd Font"
 # family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
 # family = "Operator Mono SSm Lig"
 # family = "CaskaydiaCove NF"
+family = "DankMono Nerd Font"
 # family = "FiraCode Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Hack Nerd Font"
+# family = "Hack Nerd Font"
 # family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
-# family = "CaskaydiaCove NF"
+family = "DankMono Nerd Font"
 # family = "FiraCode Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "Hack Nerd Font"
+# family = "Hack Nerd Font"
 # family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
 # family = "0xProto Nerd Font"
-# family = "CaskaydiaCove NF"
-# style = "Light Italic"
+family = "DankMono Nerd Font"
 style = "Italic"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+# family = "Hack Nerd Font"
 # family = "AdwaitaMono Nerd Font"
 # family = "IoskeleyMono Nerd Font"
-# family = "0xProto Nerd Font"
-# family = "CaskaydiaCove NF"
+family = "DankMono Nerd Font"
 style = "Bold Italic"
 
 [font.offset]
@@ -100,3 +99,8 @@ mods = "Alt"
 key = "Return"
 mods = "Shift"
 chars = "\u001B\r"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Control"
+chars = "clear\r"
