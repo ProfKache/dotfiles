@@ -24,7 +24,7 @@ return {
 				transparent = true,
 				styles = {
 					comments = { "italic" },
-					keywords = { "bold" },
+					keywords = { "italic" },
 					functions = {},
 					conditionals = {},
 					loops = {},
