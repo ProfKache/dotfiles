@@ -65,7 +65,7 @@ local config = {
 				runtimes = {
 					{
 						name = "JavaSE-1.8",
-						path = vim.env.HOME .. "/.asdf/installs/java/adoptopenjdk-8.0.452+9",
+						path = vim.env.HOME .. "/.asdf/installs/java/adoptopenjdk-8.0.504+1",
 					},
 					{
 						name = "JavaSE-11",
