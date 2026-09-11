@@ -1,65 +1,76 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local mux = wezterm.mux
 
--- Maximize the window right away
-wezterm.on("gui-startup", function(cmd)
-	local _, _, window = mux.spawn_window(cmd or {})
-	window:gui_window():maximize() -- this works for other operating systems
-	-- window:gui_window():toggle_fullscreen() -- works for mac os
-	-- window:copy_to_clipboard("Clipboard")
-end)
+local config = wezterm.config_builder()
 
-local config = {}
+-- Appearance
+config.color_scheme = "Catppuccin Mocha"
 
--- Use config builder object if possible
-if wezterm.config_builder then
-	config = wezterm.config_builder()
-end
-
--- Settings
--- config.font = wezterm.font("JetBrains Mono")
--- config.color_scheme = "Tokyo Night Storm"
-config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
-config.line_height = 1.35
-config.font = wezterm.font_with_fallback({
-	-- { family = "Operator Mono Lig", scale = 1.5, weight = "Regular" },
-	{ family = "CaskaydiaCove NF", scale = 1.5, weight = "Light" },
-	-- { family = "Fira Code", scale = 1.38, weight = "Regular" },
-	-- { family = "BlexMono Nerd Font", scale = 1.45, weight = "Regular" },
-	-- { family = "Operator Mono SSm Lig", scale = 1.3, weight = "Light" },
-	-- { family = "FuraCode Nerd Font", scale = 1.4, weight = "Light" },
+config.font = wezterm.font("DankMono Nerd Font", {
+	weight = "Regular",
 })
 
-config.check_for_updates = true
+config.font_size = 19
+config.line_height = 1.2
 
--- Disable all noises
-config.audible_bell = "Disabled"
+-- Use X11 instead of Wayland.
+-- This avoids the startup sizing issue with Neovim on Pop!_OS.
+config.enable_wayland = false
 
-config.keys = {
-	{
-		key = "C",
-		mods = "CTRL",
-		action = act.CopyTo("ClipboardAndPrimarySelection"),
-	},
-}
-
--- config.window_background_image = "/home/profkache/Pictures/term_wallpapers/pxfuel.jpg"
+-- Window
+config.window_decorations = "NONE"
 config.window_background_opacity = 1
-config.window_decorations = "RESIZE"
+
 config.window_padding = {
 	left = 0,
 	right = 0,
 	top = 0,
 	bottom = 0,
 }
+
+-- No WezTerm tab bar
+config.enable_tab_bar = false
+
+-- Terminal
 config.scrollback_lines = 3500
-config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
 
--- Open in full screen
-config.initial_rows = 50
-config.initial_cols = 200
+-- Disable audible bell
+config.audible_bell = "Disabled"
+
+-- Updates
+config.check_for_updates = true
+
+-- Key bindings
+config.keys = {
+	{
+		key = "C",
+		mods = "CTRL",
+		action = act.CopyTo("ClipboardAndPrimarySelection"),
+	},
+	{
+		key = "w",
+		mods = "CTRL",
+		action = act.CloseCurrentPane({ confirm = false }),
+	},
+	{
+		key = "q",
+		mods = "WIN",
+		action = act.CloseCurrentTab({ confirm = false }),
+	},
+	{
+		key = "k",
+		mods = "CTRL",
+		action = act.SendString("clear\n"),
+	},
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = act.SendKey({
+			key = "j",
+			mods = "CTRL",
+		}),
+	},
+}
 
 return config
