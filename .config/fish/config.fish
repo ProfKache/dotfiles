@@ -187,8 +187,6 @@ abbr td 'tmux detach'
 abbr gcc 'gcc -Wall -pedantic -Wextra'
 
 abbr ad 'adb shell am start -n "org.smartregister.nativeform/org.smartregister.nativeform.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
-# abbr kachevpn "sudo openvpn /opt/openvpn_kache/salim.kachemela@afya.go.tz__ssl_vpn_config.ovpn"
-abbr tumevpn "sudo openvpn --client --config /opt/openvpn/sslvpn-salim.kachemela1-client-config.ovpn"
 
 
 # Set path for roc language
