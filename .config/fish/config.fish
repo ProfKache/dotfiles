@@ -195,6 +195,10 @@ set -x PATH ~/sources/roc_nightly $PATH
 # Set path for exercism
 set -x PATH ~/sources/exercism $PATH
 
+# Set path for geoserver
+set -gx GEOSERVER_HOME /usr/share/geoserver
+alias geoserver="bash $GEOSERVER_HOME/bin/startup.sh"
+
 # Set path for kerl
 # set -Ux KERL_CONFIGURE_OPTIONS "--without-wx"
 
